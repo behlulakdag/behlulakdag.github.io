@@ -56,5 +56,20 @@
 - Lighthouse after video: still 100 ×4 on mobile and desktop; page weight 261 KB (mobile).
 - Note: Brave left the trailer download as an unfinished `.tmp` in Downloads (`79455518-...tmp`); safe to delete.
 
+## 2026-10-18 — Session 1 (cont.): Phase 3 — cafe demo
+
+**Done**
+- `demos/kafe/`: "Demlik", fictional third-wave café in Kadıköy (Behlül picked the brand and illustration style).
+  - Self-contained: own `variables.css` + `style.css` (reset included), shares only the font files.
+  - Hand-drawn inline SVGs (cup hero, pour-over, map) colored from CSS variables; steam animation off with reduced motion.
+  - Menu tabs (WAI-ARIA tabs, arrow/Home/End keys); without JS all three categories show side by side.
+  - "Örnek çalışma" banner on top + footer note; address/phone marked as representative; `noindex` so it never competes with a real café.
+- Portfolio card #06 (`data-category="web"`) → "Web siteleri" filter now appears automatically.
+- Tests: 22 passing (`npm test`).
+- Lighthouse (live): home 100 ×4; cafe 100 / 100 / 100 / SEO 60 — the 60 is only the intentional `noindex`.
+
+**Known gap**
+- Desktop project grid: card #06 sits alone on the last row until the berber and spor salonu demos fill it.
+
 **Next step**
-- Phase 3: three demo business sites (kafe, berber, spor salonu), TR/EN switch, live GitHub section.
+- Phase 3: demo 2 (berber / kuaför, with appointment form), then demo 3 (spor salonu), then TR/EN and live GitHub section.

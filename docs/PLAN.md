@@ -197,7 +197,7 @@ portfolio/
 
 **Faz 3 · Demo siteler ve İngilizce (Hafta 5–8)**
 
-- [ ] Demo site 1: Kafe
+- [x] Demo site 1: Kafe ("Demlik", `demos/kafe/`)
 - [ ] Demo site 2: Berber / kuaför
 - [ ] Demo site 3: Spor salonu
 - [ ] TR / EN dil düğmesi
