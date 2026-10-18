@@ -1,7 +1,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
-import { shouldLoadModel, fitDistance, MIN_WIDTH } from "../js/hero-model.js";
+import { shouldLoadModel, fitDistance, MIN_WIDTH, FOV, VIEW_DIRECTION, FRAME_STRETCH } from "../js/hero-model.js";
 
 const desktop = { viewportWidth: 1366, finePointer: true, saveData: false, webgl: true };
 
@@ -27,6 +27,21 @@ test("fitDistance: a wide canvas lets the camera come closer than a tall one", (
   const wide = fitDistance(1.2, 28, 2.2);
   const tall = fitDistance(1.2, 28, 0.6);
   assert.ok(wide < tall, `wide ${wide} should be < tall ${tall}`);
+});
+
+// The static render must be framed exactly like the live model, or the swap visibly jumps.
+test("Blender render camera matches the web viewer camera", async () => {
+  const script = await readFile(new URL("../tools/blender/barbell.py", import.meta.url), "utf8");
+  const read = (name) => script.match(new RegExp(`^${name} = ([^#\\n]+)`, "m"))?.[1].trim();
+  assert.equal(Number(read("FOV")), FOV);
+  assert.equal(Number(read("FRAME_STRETCH")), FRAME_STRETCH);
+  assert.deepEqual(read("VIEW_DIRECTION").replace(/[()\s]/g, "").split(",").map(Number), VIEW_DIRECTION);
+  assert.equal(read("BOX_ASPECT"), "640 / 288");
+});
+
+test("the hero model box uses the same 640/288 aspect as the render", async () => {
+  const css = await readFile(new URL("../css/sections.css", import.meta.url), "utf8");
+  assert.match(css, /\.hero-model \{[^}]*aspect-ratio: 640 \/ 288;/);
 });
 
 test("the GLB stays small enough for the web", async () => {

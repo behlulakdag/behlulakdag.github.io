@@ -1,10 +1,17 @@
 // 3D barbell behind the hero terminal (desktop only). Phones and anything that can't run it keep the
 // static render (assets/img/barbell.webp) that is already in the HTML.
-// Three.js (~170 KB compressed) is downloaded only after the page has loaded and the browser is idle,
-// so it never competes with the first paint.
+// Three.js (~170 KB compressed) is downloaded only after the page has loaded and the visitor first moves
+// the mouse, scrolls or presses a key, so it never competes with the first paint.
 
 export const MODEL_URL = new URL("../assets/models/barbell.glb", import.meta.url).href;
 export const MIN_WIDTH = 960;
+
+// Camera setup, shared with tools/blender/barbell.py so the static render and the live model line up exactly.
+export const FOV = 28; // vertical, degrees, of the full (stretched) frame
+export const VIEW_DIRECTION = [0.45, 0.32, 0.83]; // three-quarter view from slightly above
+// The lower part of the box sits behind the terminal window, so the model is drawn higher up:
+// we render the bottom part of a taller virtual frame, which puts the model's centre ~35% from the top.
+export const FRAME_STRETCH = 1.3;
 
 export function shouldLoadModel({ viewportWidth, finePointer, saveData, webgl }) {
   return viewportWidth >= MIN_WIDTH && finePointer && !saveData && webgl;
@@ -58,10 +65,8 @@ async function startViewer(container) {
   key.position.set(2, 3, 2);
   scene.add(key, new THREE.HemisphereLight(0xffffff, 0x1b1f24, 0.6));
 
-  const FOV = 28;
   const camera = new THREE.PerspectiveCamera(FOV, 1, 0.1, 50);
-  // Starting angle: three-quarter view from slightly above, same as the static render
-  const viewDirection = new THREE.Vector3(0.45, 0.32, 0.83).normalize();
+  const viewDirection = new THREE.Vector3(...VIEW_DIRECTION).normalize();
 
   const controls = new OrbitControls(camera, canvas);
   controls.enableZoom = false; // wheel keeps scrolling the page
@@ -84,10 +89,6 @@ async function startViewer(container) {
   // Half of the longest side: the bar seen broadside is the widest the model ever gets on screen
   const size = box.getSize(new THREE.Vector3());
   const radius = Math.max(size.x, size.z) / 2;
-
-  // The lower part of the canvas sits behind the terminal window, so draw the model higher up:
-  // render the top part of a taller virtual frame, which moves the model's centre to ~35% from the top.
-  const FRAME_STRETCH = 1.3;
 
   function resize() {
     const { width, height } = container.getBoundingClientRect();
@@ -130,7 +131,7 @@ export function initHeroModel() {
   });
   if (!enabled) return;
 
-  const begin = () =>
+  const start = () =>
     whenIdle(() =>
       startViewer(container).catch((error) => {
         // The static render stays in place, so the hero still looks complete
@@ -138,6 +139,17 @@ export function initHeroModel() {
       }),
     );
 
-  if (document.readyState === "complete") begin();
-  else window.addEventListener("load", begin, { once: true });
+  // Wait for the visitor's first move. Until then the static render (same camera angle) is on screen,
+  // so the swap is invisible — and parsing Three.js never blocks the page while it is still settling.
+  const FIRST_INTERACTION = ["pointermove", "pointerdown", "wheel", "scroll", "keydown", "touchstart"];
+  const onFirstInteraction = () => {
+    for (const type of FIRST_INTERACTION) window.removeEventListener(type, onFirstInteraction);
+    start();
+  };
+  const listen = () => {
+    for (const type of FIRST_INTERACTION) window.addEventListener(type, onFirstInteraction, { passive: true });
+  };
+
+  if (document.readyState === "complete") listen();
+  else window.addEventListener("load", listen, { once: true });
 }
