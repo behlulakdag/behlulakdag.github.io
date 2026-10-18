@@ -107,6 +107,22 @@
 - Use `https://behlulakdag.github.io/?lang=en` on Upwork so clients land on English.
 - English copy was written by Claude — read it once and adjust anything that doesn't sound like you.
 
+## 2026-10-18 — Session 1 (cont.): Phase 3 — live GitHub section
+
+**Done**
+- `js/github.js` + section `#github` (04, between Services and Contact; Contact is now 05).
+  - GitHub REST API `users/behlulakdag/repos`: forks, archived and private repos dropped, newest push first, max 6 cards (4 today).
+  - Card: name (whole card clickable), description, language dot (GitHub colors as `--lang-*` tokens), stars only when > 0, "3 gün önce güncellendi" via `Intl.RelativeTimeFormat` (follows TR/EN).
+  - Language bar + legend from repos' primary languages.
+  - Request starts only when the section is within 600px of the viewport; response cached in sessionStorage for 10 minutes (60 calls/hour limit). Skeleton cards reserve space; error state hides cards and points to the profile link. No JS → profile link only.
+- Tests: 68 passing (repo selection, language shares, slugs, relative time in TR and EN).
+- Lighthouse (live): TR mobile 100 ×4, EN mobile 99/100/100/100, TR desktop 100 ×4; no GitHub request during page load.
+
+**For Behlül**
+- `to-do-list` has no description on GitHub, so its card says "Açıklama henüz eklenmedi." Add one on GitHub (repo page → ⚙ next to About) and the card updates by itself.
+
+**Phase 3 status**
+- All tasks done. Gate is yours: put the demo screenshots (`assets/img/projects/demlik.webp`, `ustura.webp`, `demir-atolyesi.webp`) into your Fiverr gigs.
+
 **Next step**
-- Phase 3: live GitHub section (latest repos via the GitHub REST API).
-- Phase 3 gate (Behlül): use the demo screenshots in Fiverr gigs.
+- Phase 4: Blender model + Three.js on the hero (desktop only), terminal secret commands, custom domain, LiftLog APK link when ready.
