@@ -193,7 +193,7 @@ portfolio/
 - [x] Karanlık / aydınlık tema düğmesi
 - [x] Kaydırınca beliren bölümler
 - [x] Proje filtresi ("Web siteleri" düğmesi demo kartlar eklenince kendiliğinden çıkar)
-- [ ] Roblox oynanış GIF'leri ve kart üzerine gelince oynayan video (oynanış kayıtları bekleniyor)
+- [x] Kart üzerine gelince oynayan oynanış videosu (Build a Chef; diğer oyunlar için video eklenmeyecek)
 
 **Faz 3 · Demo siteler ve İngilizce (Hafta 5–8)**
 

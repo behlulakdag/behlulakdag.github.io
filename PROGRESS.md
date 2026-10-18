@@ -52,8 +52,9 @@
 - Unit tests: `npm test` (Node built-in runner), 15 passing. One test keeps the terminal fallback text and JS script in sync.
 - Live Lighthouse: mobile 100/100/100/100 (LCP 1.3s, CLS 0.011), desktop 100 across the board.
 
-**Still open from Phase 2**
-- Roblox gameplay GIF/video on card hover — needs 10–15s gameplay clips from Behlül.
+- Hover video: Build a Chef trailer (Roblox game page preview video) cut to a 10s muted loop, `assets/video/build-a-chef.{webm,mp4}` (~750/860 KB). Desktop only, created on first hover — zero bytes on page load. Behlül decided the other two games don't need videos.
+- Lighthouse after video: still 100 ×4 on mobile and desktop; page weight 261 KB (mobile).
+- Note: Brave left the trailer download as an unfinished `.tmp` in Downloads (`79455518-...tmp`); safe to delete.
 
 **Next step**
 - Phase 3: three demo business sites (kafe, berber, spor salonu), TR/EN switch, live GitHub section.
