@@ -1,0 +1,7 @@
+# Editor / OS
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Raw sources before WebP conversion
+assets/raw/
