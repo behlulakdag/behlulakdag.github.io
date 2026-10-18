@@ -6,8 +6,8 @@ Run headless (no Blender window needed):
 Outputs a single-mesh GLB for Three.js and a transparent PNG render used as the phone fallback.
 Then compress for the web (Three.js loads it with the meshopt decoder):
     npx @gltf-transform/cli optimize <glb_out> assets/models/barbell.glb --compress meshopt --texture-compress false --simplify false
-and convert the PNG:
-    ffmpeg -i <png_out> -vf "crop=1200:540:0:160,scale=640:-1" -c:v libwebp -pix_fmt yuva420p -quality 80 assets/img/barbell.webp
+and convert the PNG, keeping only the bottom 1120×504 that the web viewer shows:
+    ffmpeg -i <png_out> -vf "crop=1120:504:0:ih-504,scale=640:288" -c:v libwebp -pix_fmt yuva420p -quality 80 assets/img/barbell.webp
 Sizes are real-world metres; plate diameters and colours follow competition (IPF) plates.
 """
 
@@ -198,8 +198,6 @@ print(f"EXPORTED {GLB_OUT}")
 engine_ids = [item.identifier for item in bpy.types.RenderSettings.bl_rna.properties["engine"].enum_items]
 scene.render.engine = next((e for e in ("BLENDER_EEVEE_NEXT", "BLENDER_EEVEE") if e in engine_ids), engine_ids[0])
 scene.render.film_transparent = True
-scene.render.resolution_x = 1200
-scene.render.resolution_y = 720
 scene.render.image_settings.file_format = "PNG"
 scene.render.image_settings.color_mode = "RGBA"
 
@@ -225,15 +223,37 @@ fill_obj.location = (-2.0, -2.5, 1.6)
 fill_obj.rotation_euler = (math.radians(60), 0, math.radians(-40))
 scene.collection.objects.link(fill_obj)
 
+# ---------- Camera: identical to the web viewer (js/hero-model.js) ----------
+# The static image is shown until the live model takes over, so both must frame the model the same way.
+# Keep these four values equal to FOV, VIEW_DIRECTION, FRAME_STRETCH and the 640/288 box in hero-model.js.
+FOV = 28  # vertical, degrees, of the full (stretched) frame
+VIEW_DIRECTION = (0.45, 0.32, 0.83)  # Three.js axes: x right, y up, z towards the viewer
+FRAME_STRETCH = 1.3
+BOX_ASPECT = 640 / 288
+
+full_aspect = BOX_ASPECT / FRAME_STRETCH
+vertical_half = math.radians(FOV) / 2
+horizontal_half = math.atan(math.tan(vertical_half) * full_aspect)
+radius = max(model.dimensions.x, model.dimensions.y) / 2  # bar length or platform depth
+distance = radius * 1.08 / math.tan(min(vertical_half, horizontal_half))
+
 camera_data = bpy.data.cameras.new("Camera")
-camera_data.lens = 50
+camera_data.sensor_fit = "VERTICAL"
+camera_data.angle_y = math.radians(FOV)
 camera = bpy.data.objects.new("Camera", camera_data)
 scene.collection.objects.link(camera)
 scene.camera = camera
-# Three-quarter view, slightly above: the same angle the web viewer starts at
-camera.location = Vector((1.55, -2.85, 1.15))
+dx, dy, dz = VIEW_DIRECTION
+length = math.sqrt(dx * dx + dy * dy + dz * dz)
+# Three.js (x, y, z) → Blender (x, -z, y)
+camera.location = Vector((dx, -dz, dy)) * (distance / length)
 direction = Vector((0, 0, 0)) - camera.location
 camera.rotation_euler = direction.to_track_quat("-Z", "Y").to_euler()
+print(f"CAMERA distance={distance:.3f}")
+
+# Render the full stretched frame; the web viewer shows only its bottom part (crop afterwards)
+scene.render.resolution_x = 1120
+scene.render.resolution_y = round(1120 / full_aspect)
 
 scene.render.filepath = PNG_OUT
 bpy.ops.render.render(write_still=True)
