@@ -35,6 +35,32 @@
         document.documentElement.dataset.theme = theme;
         document.documentElement.classList.add("js");
       })();
+
+      // Same choice order as js/i18n.js pickLanguage (saved > ?lang= > browser). For English, hide the Turkish
+      // text until the translation lands so the page never visibly swaps languages (no layout shift), and start
+      // downloading en.json right away. A timeout reveals the page even if something goes wrong.
+      (function () {
+        var lang;
+        try { lang = localStorage.getItem("lang"); } catch (e) {}
+        if (lang !== "tr" && lang !== "en") lang = new URLSearchParams(location.search).get("lang");
+        if (lang !== "tr" && lang !== "en") {
+          var tags = navigator.languages || [navigator.language];
+          for (var i = 0; i < tags.length && !lang; i++) {
+            var base = String(tags[i]).toLowerCase().split("-")[0];
+            if (base === "tr" || base === "en") lang = base;
+          }
+        }
+        if (lang !== "en") return;
+        var root = document.documentElement;
+        root.classList.add("i18n-pending");
+        var preload = document.createElement("link");
+        preload.rel = "preload";
+        preload.as = "fetch";
+        preload.crossOrigin = "anonymous";
+        preload.href = "lang/en.json";
+        document.head.appendChild(preload);
+        setTimeout(function () { root.classList.remove("i18n-pending"); }, 1500);
+      })();
     </script>
 
     <!-- Fonts are self-hosted: no extra round trip to Google before first paint -->

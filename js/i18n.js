@@ -138,6 +138,9 @@ export async function initI18n() {
   } catch (error) {
     console.warn("Translations could not be loaded; staying in Turkish.", error);
     return false;
+  } finally {
+    // The head script hides the page for English visitors until this point
+    document.documentElement.classList.remove("i18n-pending");
   }
 
   const toggle = document.querySelector("[data-lang-toggle]");

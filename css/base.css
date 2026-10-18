@@ -94,6 +94,11 @@ a:hover {
   border: 0;
 }
 
+/* Set by the head script for English visitors until js/i18n.js has swapped the text in */
+.i18n-pending body {
+  visibility: hidden;
+}
+
 .skip-link {
   position: absolute;
   top: var(--space-2);
