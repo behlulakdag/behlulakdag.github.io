@@ -175,15 +175,46 @@
 
 .site-nav__list {
   display: flex;
-  gap: var(--space-3);
+  gap: var(--space-2);
   padding: 0;
   list-style: none;
 }
 
 .site-nav__list a {
+  display: block;
+  padding: var(--space-2) var(--space-1);
   color: var(--color-text-muted);
   font-size: var(--text-sm);
   text-decoration: none;
+}
+
+/* Small phones: drop the "~/" so brand, menu and theme button fit on one line */
+@media (max-width: 419px) {
+  .brand__prompt {
+    display: none;
+  }
+}
+
+/* Very small phones (under 360px): menu moves to its own row under the brand */
+@media (max-width: 359px) {
+  :root {
+    --header-height: 96px; /* keeps anchor jumps clear of the taller two-row header */
+  }
+
+  .site-header__inner {
+    flex-wrap: wrap;
+    padding-top: var(--space-2);
+  }
+
+  .site-nav {
+    order: 3;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .site-nav__list {
+    justify-content: space-between;
+  }
 }
 
 .site-nav__list a:hover {
@@ -200,7 +231,7 @@
   place-items: center;
   width: 40px;
   height: 40px;
-  margin-left: var(--space-3);
+  margin-left: var(--space-2);
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
@@ -779,7 +810,11 @@
 
 @media (min-width: 960px) {
   .site-nav__list {
-    gap: var(--space-5);
+    gap: var(--space-4);
+  }
+
+  .theme-toggle {
+    margin-left: var(--space-4);
   }
 
   .hero {
