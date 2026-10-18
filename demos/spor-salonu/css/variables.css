@@ -74,7 +74,7 @@
   --color-plate-25: #c8322b;
   --color-plate-20: #2a5db0;
   --color-plate-15: #f2c230;
-  --color-plate-10: #2f8a4c;
+  --color-plate-10: #36975a; /* light enough for dark badge text to pass 4.5:1 */
   --color-steel: #a9adb3;
   --color-steel-dark: #6f747a;
 
