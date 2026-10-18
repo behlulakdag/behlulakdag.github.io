@@ -29,24 +29,31 @@ function saveTheme(theme) {
   }
 }
 
-function applyTheme(theme, toggleButton) {
-  document.documentElement.dataset.theme = theme;
-  document.querySelector('meta[name="theme-color"]')?.setAttribute("content", THEME_COLORS[theme]);
-  if (toggleButton) {
-    const isLight = theme === "light";
-    toggleButton.setAttribute("aria-pressed", String(isLight));
-    toggleButton.setAttribute("aria-label", isLight ? "Karanlık temaya geç" : "Aydınlık temaya geç");
-  }
-}
+// Turkish fallbacks, used only if lang/*.json could not be loaded
+const FALLBACK_LABELS = { toLight: "Aydınlık temaya geç", toDark: "Karanlık temaya geç" };
 
-export function initTheme() {
+// `translate(key)` returns the current language's string, or undefined to fall back to Turkish.
+export function initTheme(translate = () => undefined) {
   const toggleButton = document.querySelector("[data-theme-toggle]");
   const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
-  applyTheme(resolveInitialTheme(readStoredTheme(), prefersLight), toggleButton);
+
+  function applyTheme(theme) {
+    document.documentElement.dataset.theme = theme;
+    document.querySelector('meta[name="theme-color"]')?.setAttribute("content", THEME_COLORS[theme]);
+    if (!toggleButton) return;
+    const isLight = theme === "light";
+    const labelKey = isLight ? "toDark" : "toLight";
+    toggleButton.setAttribute("aria-pressed", String(isLight));
+    toggleButton.setAttribute("aria-label", translate(`theme.${labelKey}`) ?? FALLBACK_LABELS[labelKey]);
+  }
+
+  applyTheme(resolveInitialTheme(readStoredTheme(), prefersLight));
 
   toggleButton?.addEventListener("click", () => {
     const theme = nextTheme(document.documentElement.dataset.theme);
-    applyTheme(theme, toggleButton);
+    applyTheme(theme);
     saveTheme(theme);
   });
+
+  document.addEventListener("languagechange", () => applyTheme(document.documentElement.dataset.theme));
 }
