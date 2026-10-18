@@ -328,6 +328,19 @@
   color: var(--color-accent);
 }
 
+.terminal__body {
+  cursor: default;
+}
+
+.terminal__cursor {
+  display: inline-block;
+  width: 0.6em;
+  height: 1em;
+  vertical-align: middle;
+  background: var(--color-accent);
+  animation: blink 1.1s steps(1) infinite;
+}
+
 .terminal__chips {
   position: absolute;
   right: calc(-1 * var(--space-2));
