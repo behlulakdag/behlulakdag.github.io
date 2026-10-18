@@ -40,5 +40,20 @@
 - Add https://behlulakdag.github.io/ to Fiverr and Upwork profiles (Phase 1 gate).
 - Optional: a real To-Do app screenshot (card currently uses a code-style cover).
 
+## 2026-10-18 — Session 1 (cont.): Phase 2 interactions
+
+**Done**
+- JS split into ES modules (`js/main.js` → `theme.js`, `terminal.js`, `reveal.js`, `filter.js`).
+- Theme toggle: saved in localStorage, falls back to OS setting; inline head script prevents a wrong-theme flash.
+- Terminal typing: static HTML is the no-JS / reduced-motion fallback; height locked so no layout shift; click skips.
+- Scroll reveal: IntersectionObserver, staggered; hiding class is added by JS only (safe if JS fails), off with reduced motion.
+- Project filter: buttons generated from card categories; aria-pressed + live result count.
+- Header fixed for 320–375px phones (no horizontal scroll).
+- Unit tests: `npm test` (Node built-in runner), 15 passing. One test keeps the terminal fallback text and JS script in sync.
+- Live Lighthouse: mobile 100/100/100/100 (LCP 1.3s, CLS 0.011), desktop 100 across the board.
+
+**Still open from Phase 2**
+- Roblox gameplay GIF/video on card hover — needs 10–15s gameplay clips from Behlül.
+
 **Next step**
-- Phase 2: terminal typing animation, theme toggle, scroll reveal, project filter.
+- Phase 3: three demo business sites (kafe, berber, spor salonu), TR/EN switch, live GitHub section.

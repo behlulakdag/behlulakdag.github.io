@@ -189,11 +189,11 @@ portfolio/
 
 **Faz 2 · Havalı ilk dokunuşlar (Hafta 3–4)**
 
-- [ ] Terminal girişi animasyonu
-- [ ] Karanlık / aydınlık tema düğmesi
-- [ ] Kaydırınca beliren bölümler
-- [ ] Proje filtresi
-- [ ] Roblox oynanış GIF'leri ve kart üzerine gelince oynayan video
+- [x] Terminal girişi animasyonu
+- [x] Karanlık / aydınlık tema düğmesi
+- [x] Kaydırınca beliren bölümler
+- [x] Proje filtresi ("Web siteleri" düğmesi demo kartlar eklenince kendiliğinden çıkar)
+- [ ] Roblox oynanış GIF'leri ve kart üzerine gelince oynayan video (oynanış kayıtları bekleniyor)
 
 **Faz 3 · Demo siteler ve İngilizce (Hafta 5–8)**
 
