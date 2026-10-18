@@ -1,0 +1,9 @@
+{
+  "name": "behlulakdag-portfolio",
+  "private": true,
+  "type": "module",
+  "description": "Only used to run unit tests with Node's built-in test runner; the site itself has no build step.",
+  "scripts": {
+    "test": "node --test \"tests/**/*.test.js\""
+  }
+}
