@@ -6,6 +6,7 @@ import { initReveal } from "./reveal.js";
 import { initFilter } from "./filter.js";
 import { initCardVideos } from "./card-video.js";
 import { initGitHub } from "./github.js";
+import { initHeroModel } from "./hero-model.js";
 
 // Language first, so every feature below starts with the right labels
 await initI18n();
@@ -16,3 +17,4 @@ initReveal();
 initFilter(t);
 initCardVideos();
 initGitHub(t, getLanguage);
+initHeroModel();

@@ -63,6 +63,16 @@
       })();
     </script>
 
+    <!-- Three.js for the hero 3D model; pinned version, only downloaded on desktop after the page has loaded -->
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.min.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+        }
+      }
+    </script>
+
     <!-- Fonts are self-hosted: no extra round trip to Google before first paint -->
     <link rel="preload" href="assets/fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
@@ -125,6 +135,21 @@
           </div>
 
           <div class="terminal" aria-label="Terminal görünümünde kısa tanıtım" data-i18n-attr="aria-label:terminal.label">
+            <!-- 3D barbell peeking out behind the terminal; js/hero-model.js swaps the render for a live model on desktop -->
+            <div class="hero-model" data-hero-model>
+              <img
+                class="hero-model__fallback"
+                src="assets/img/barbell.webp"
+                width="640"
+                height="288"
+                alt="Renkli yarışma plakalarıyla yüklü bir halter, iki sehpa üstünde"
+                data-i18n-attr="alt:hero.modelAlt"
+                decoding="async"
+                fetchpriority="low"
+              />
+              <canvas class="hero-model__canvas" aria-hidden="true"></canvas>
+              <span class="hero-model__hint" aria-hidden="true" data-i18n="hero.modelHint">↻ sürükle</span>
+            </div>
             <div class="terminal__back" aria-hidden="true"></div>
             <div class="terminal__window">
               <div class="terminal__bar" aria-hidden="true">

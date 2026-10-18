@@ -25,7 +25,9 @@
     "title": "Merhaba, ben <span class=\"text-accent\">Behlül</span>.<br>Uygulama, oyun ve web sitesi yapıyorum.",
     "lead": "Android ve web uygulamaları geliştiriyor, Roblox'ta oyun yayınlıyor ve küçük işletmeler için hızlı, mobil uyumlu siteler tasarlıyorum.",
     "ctaProjects": "Projelerimi gör",
-    "ctaQuote": "Teklif iste"
+    "ctaQuote": "Teklif iste",
+    "modelAlt": "Renkli yarışma plakalarıyla yüklü bir halter, iki sehpa üstünde",
+    "modelHint": "↻ sürükle"
   },
   "terminal": {
     "label": "Terminal görünümünde kısa tanıtım",

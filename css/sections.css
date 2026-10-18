@@ -335,23 +335,91 @@
   gap: var(--space-3);
 }
 
-/* Terminal: a window stacked on an offset back panel, with chips hanging off the edge */
+/* Terminal: a window stacked on an offset back panel, with chips hanging off the edge
+   and the 3D barbell peeking out from behind its top-right corner.
+   Layers: model (0) < dashed back panel (1) < window (2) < chips (3) */
 .terminal {
   position: relative;
+  margin-top: var(--space-8); /* room for the model above the window */
   margin-right: var(--space-3);
   margin-bottom: var(--space-4);
 }
 
+.hero-model {
+  position: absolute;
+  z-index: 0;
+  top: -112px;
+  right: calc(-1 * var(--space-3));
+  width: min(92%, 420px);
+  aspect-ratio: 640 / 288;
+}
+
+.hero-model__fallback,
+.hero-model__canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-model__fallback {
+  object-fit: contain;
+  transition: opacity var(--duration-base) var(--ease-out);
+}
+
+.hero-model__canvas {
+  opacity: 0;
+  cursor: grab;
+  touch-action: pan-y; /* vertical swipes still scroll the page */
+  transition: opacity 0.6s var(--ease-out);
+}
+
+.hero-model__canvas:active {
+  cursor: grabbing;
+}
+
+.hero-model.is-ready .hero-model__canvas {
+  opacity: 1;
+}
+
+.hero-model.is-ready .hero-model__fallback {
+  opacity: 0;
+}
+
+/* Small "drag me" tab on the model's top edge, only once the live model is there */
+.hero-model__hint {
+  position: absolute;
+  top: var(--space-2);
+  right: var(--space-4);
+  padding: 2px var(--space-2);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-accent);
+  background: var(--color-bg);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-sm);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--duration-base) var(--ease-out);
+}
+
+.hero-model.is-ready .hero-model__hint {
+  opacity: 1;
+}
+
 .terminal__back {
   position: absolute;
+  z-index: 1;
   inset: 0;
   transform: translate(var(--space-3), var(--space-3));
   border: 1px dashed var(--color-accent);
   border-radius: var(--radius-md);
+  pointer-events: none;
 }
 
 .terminal__window {
   position: relative;
+  z-index: 2;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
@@ -417,6 +485,7 @@
 
 .terminal__chips {
   position: absolute;
+  z-index: 3;
   right: calc(-1 * var(--space-2));
   bottom: calc(-1 * var(--space-4));
   display: flex;
@@ -1077,6 +1146,17 @@ html:not(.js) .github__languages {
   .hero__inner {
     grid-template-columns: 1.15fr 1fr;
     align-items: center;
+  }
+
+  /* Desktop: a bigger, draggable model that spills over the terminal's top-right corner */
+  .terminal {
+    margin-top: var(--space-8);
+  }
+
+  .hero-model {
+    top: -170px;
+    right: -88px;
+    width: 560px;
   }
 
   .about__inner {

@@ -25,7 +25,9 @@
     "title": "Hi, I'm <span class=\"text-accent\">Behlül</span>.<br>I build apps, games and websites.",
     "lead": "I develop Android and web apps, publish games on Roblox, and design fast, mobile-friendly websites for small businesses.",
     "ctaProjects": "See my projects",
-    "ctaQuote": "Get a quote"
+    "ctaQuote": "Get a quote",
+    "modelAlt": "A barbell loaded with colored competition plates, resting on two stands",
+    "modelHint": "↻ drag"
   },
   "terminal": {
     "label": "Short intro styled as a terminal",
