@@ -57,9 +57,10 @@ Sitede yedi proje kartı olacak: dört gerçek proje ve üç örnek işletme sit
 | Proje | Kategori | Gösterilecek | Not |
 | --- | --- | --- | --- |
 | LiftLog | Mobil + backend | Ekran görüntüleri, GitHub linki | "Yapım aşamasında" etiketiyle; bitince güncellenir |
-| JavaFX + PostgreSQL To-Do | Masaüstü | Ekran görüntüsü, GitHub linki | Kod GitHub'a yüklenmeli, README yazılmalı |
-| ULTRAKILL tarzı FPS (Roblox) | Oyun | Kısa oynanış videosu veya GIF | Luau ve oyun mantığı vurgulanır |
-| BrickSmash (Roblox) | Oyun | Oynanış GIF'i, Roblox linki | Varsa oyuncu sayısı eklenir |
+| Akıllı Planlayıcı (JavaFX + SQLite To-Do) | Masaüstü | Ekran görüntüsü, GitHub linki | Şimdilik kod kapaklı kart; gerçek ekran görüntüsü eklenecek |
+| Garbage King (Roblox) | Oyun | Oyun görseli, Roblox + GitHub linki | ~107 bin satır Luau, 2.100+ commit |
+| Smash for Eggs (Roblox) | Oyun | Oyun görseli, Roblox linki | Heavenly Forge Studios |
+| Build a Chef (Roblox) | Oyun | Oyun görseli, Roblox linki | Heavenly Forge Studios |
 | Örnek site: Kafe | Freelance demo | Canlı demo linki | Hayali marka, menü ve konum bölümü |
 | Örnek site: Berber / kuaför | Freelance demo | Canlı demo linki | Hayali marka, randevu formu |
 | Örnek site: Spor salonu | Freelance demo | Canlı demo linki | Hayali marka, üyelik paketleri |
@@ -178,12 +179,12 @@ portfolio/
 
 **Faz 1 · İskelet ve ilk yayın (Hafta 1–2)**
 
-- [ ] GitHub'da `portfolio` deposu, GitHub Pages açık
-- [ ] `index.html`: Giriş, Hakkımda, Projeler, Hizmetler, İletişim bölümleri (sade HTML)
-- [ ] `variables.css` ile renkler ve yazı tipleri
-- [ ] Mobil uyumlu düzen (Flexbox ve Grid)
-- [ ] Proje kartları: LiftLog, To-Do, iki Roblox oyunu (görsellerle)
-- [ ] Formspree ile çalışan iletişim formu
+- [x] GitHub'da `behlulakdag.github.io` deposu, GitHub Pages açık
+- [x] `index.html`: Giriş, Hakkımda, Projeler, Hizmetler, İletişim bölümleri (sade HTML)
+- [x] `variables.css` ile renkler ve yazı tipleri
+- [x] Mobil uyumlu düzen (Flexbox ve Grid)
+- [x] Proje kartları: LiftLog, To-Do, üç Roblox oyunu (Garbage King, Smash for Eggs, Build a Chef)
+- [ ] Formspree ile çalışan iletişim formu (form hazır, Formspree form ID'si bekleniyor)
 - [ ] Kapı: site canlıda, link Fiverr ve Upwork profillerinde
 
 **Faz 2 · Havalı ilk dokunuşlar (Hafta 3–4)**
