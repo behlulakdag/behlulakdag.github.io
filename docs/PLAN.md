@@ -206,7 +206,7 @@ portfolio/
 
 **Faz 4 · Şov kısmı (vizelerden sonra)**
 
-- [ ] Blender'da küçük model, Three.js ile ana sayfada
+- [x] Blender'da küçük model, Three.js ile ana sayfada (yüklü halter, `tools/blender/barbell.py` ile üretiliyor)
 - [ ] Terminal gizli komutları ve sürpriz
 - [ ] Kendi alan adın (`.dev` gibi)
 - [ ] LiftLog bitince kartını güncelle, APK linkini ekle

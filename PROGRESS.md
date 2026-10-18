@@ -124,5 +124,17 @@
 **Phase 3 status**
 - All tasks done. Gate is yours: put the demo screenshots (`assets/img/projects/demlik.webp`, `ustura.webp`, `demir-atolyesi.webp`) into your Fiverr gigs.
 
+## 2026-10-18 — Session 1 (cont.): Phase 4 — 3D barbell
+
+**Done**
+- `tools/blender/barbell.py` builds the model headless (Blender 5.2, `--background --factory-startup`): competition plates in real sizes/colours (25 red → 2.5 black) with lip + hub profile, collars with green knobs, two stands with green cradles, wood/rubber platform with green lines. Joined into one mesh, 12 materials, ~6.5k faces.
+- `assets/models/barbell.glb`: 527 KB raw → 110 KB with `gltf-transform optimize --compress meshopt`.
+- `assets/img/barbell.webp` (7 KB, transparent): rendered with the web viewer's exact camera (FOV, direction, distance, frame offset) so the static image and live model line up; a test checks the Blender and JS camera constants match.
+- `js/hero-model.js`: Three.js 0.170.0 via import map (jsDelivr). Desktop only (≥960px, mouse, no data saver, WebGL). Starts on the visitor's first mouse move / scroll / key, then idle; draggable (OrbitControls, no zoom/pan), slow auto-rotate (off with reduced motion), pauses off-screen. Phones always show the static render.
+- Layout: model box sits behind the terminal's top-right corner (layers: model < dashed panel < window < chips); hero clips overflow. og-image refreshed.
+- Tests: 77 passing.
+- Lighthouse (live): TR desktop 100 ×4 (TBT 0), TR mobile 99/100/100/100, EN mobile 98/100/100/100; no 3D requests during page load.
+
 **Next step**
-- Phase 4: Blender model + Three.js on the hero (desktop only), terminal secret commands, custom domain, LiftLog APK link when ready.
+- Phase 4: terminal secret commands (`help`, `projects`, `gym`, easter egg).
+- Later (Behlül): custom domain purchase, LiftLog APK link when it ships.
