@@ -188,15 +188,8 @@
   text-decoration: none;
 }
 
-/* Small phones: drop the "~/" so brand, menu and theme button fit on one line */
-@media (max-width: 419px) {
-  .brand__prompt {
-    display: none;
-  }
-}
-
-/* Very small phones (under 360px): menu moves to its own row under the brand */
-@media (max-width: 359px) {
+/* Phones (under 480px): brand and the two toggles share the top row, the menu gets its own row below */
+@media (max-width: 479px) {
   :root {
     --header-height: 96px; /* keeps anchor jumps clear of the taller two-row header */
   }
@@ -209,11 +202,16 @@
   .site-nav {
     order: 3;
     width: 100%;
-    margin-left: 0;
   }
 
   .site-nav__list {
     justify-content: space-between;
+  }
+
+  /* Auto margin pushes the theme + language pair to the right edge of the top row.
+     Extra class in the selector: the base .theme-toggle rule comes later in this file and would win otherwise. */
+  .site-header__inner .theme-toggle {
+    margin-left: auto;
   }
 }
 
@@ -223,6 +221,36 @@
 
 .site-nav {
   margin-left: auto;
+}
+
+/* Language button reuses the theme button's square shape */
+.lang-toggle {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  margin-left: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-accent);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  box-shadow: 3px 3px 0 var(--color-accent-soft);
+  cursor: pointer;
+  transition:
+    border-color var(--duration-fast) var(--ease-out),
+    transform var(--duration-fast) var(--ease-out);
+}
+
+.lang-toggle[hidden] {
+  display: none;
+}
+
+.lang-toggle:hover {
+  border-color: var(--color-accent);
+  transform: translate(-1px, -1px);
 }
 
 .theme-toggle {
