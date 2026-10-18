@@ -79,8 +79,18 @@
 - Portfolio card #07. Tests: 34 passing.
 - Lighthouse (live): home 100 ×4; barber 100 / 100 / 100 / SEO 60 (intentional `noindex`).
 
-**Known gap**
-- Desktop project grid: last row has two demo cards and one empty slot until the spor salonu demo.
+## 2026-10-18 — Session 1 (cont.): Phase 3 — gym demo
+
+**Done**
+- `demos/spor-salonu/`: "Demir Atölyesi", fictional power gym in Ataşehir (Behlül picked the brand and asked for both interactions).
+  - SVG hero: power rack with a barbell loaded in competition plate colors, chalk bowl, "PR 272,5 kg" sticker; hazard-stripe borders.
+  - Membership calculator (`js/membership.js`): monthly / 3-month (−10%) / yearly (−25%), student −20% on eligible plans (not coaching), per-month rounded to 10 ₺, shows period total and saving. Native radios/checkbox styled as segmented control and switch.
+  - Weekly schedule (`js/schedule.js`): day tabs (opens on today, Sunday → Monday), level filter where "Her seviye" classes match every level, empty-state message, live status text. Without JS the full week shows as a 3-column board.
+- Fixed: hero highlight block covered the line above on phones; beginner badge contrast (green lightened to #36975a).
+- Portfolio card #08 — desktop grid is now three full rows (software · games · demos).
+- Tests: 44 passing.
+- Lighthouse (live): home 100 ×4; gym 100 / 100 / 100 / SEO 60 (intentional `noindex`).
 
 **Next step**
-- Phase 3: demo 3 (spor salonu, membership packages), then TR/EN switch and live GitHub section.
+- Phase 3: TR/EN language switch for the portfolio, then the live GitHub section.
+- Phase 3 gate (Behlül): use the demo screenshots in Fiverr gigs.

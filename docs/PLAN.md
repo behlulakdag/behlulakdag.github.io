@@ -199,7 +199,7 @@ portfolio/
 
 - [x] Demo site 1: Kafe ("Demlik", `demos/kafe/`)
 - [x] Demo site 2: Berber / kuaför ("Ustura", `demos/berber/`, randevu formlu)
-- [ ] Demo site 3: Spor salonu
+- [x] Demo site 3: Spor salonu ("Demir Atölyesi", `demos/spor-salonu/`, üyelik hesaplayıcı + ders programı)
 - [ ] TR / EN dil düğmesi
 - [ ] Canlı GitHub bölümü
 - [ ] Kapı: Fiverr gig'lerinde demo sitelerin ekran görüntüleri kullanılıyor
