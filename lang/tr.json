@@ -98,6 +98,16 @@
     "ctaText": "Fiyat projeye göre değişir; ihtiyacınızı yazın, aynı gün dönüş yapayım.",
     "ctaButton": "Teklif iste"
   },
+  "github": {
+    "title": "GitHub'da son hareketler",
+    "lead": "Depolarım GitHub'dan canlı olarak çekiliyor: en son güncellediklerim üstte.",
+    "profileLink": "Tüm profilimi GitHub'da gör",
+    "noDescription": "Açıklama henüz eklenmedi.",
+    "updated": "{time} güncellendi",
+    "stars": "{count} yıldız",
+    "languagesTitle": "Depolarda kullanılan diller",
+    "error": "GitHub'a şu an ulaşılamadı. Depolarıma aşağıdaki linkten doğrudan bakabilirsin."
+  },
   "contact": {
     "title": "İletişim",
     "lead": "Staj, freelance iş ya da sadece merhaba demek için yazın.",

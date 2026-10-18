@@ -505,11 +505,32 @@ java  kotlin  luau  html  css  javascript
         </div>
       </section>
 
+      <!-- GITHUB (filled live by js/github.js) -->
+      <section class="section github" id="github" aria-labelledby="github-title" data-github>
+        <div class="container">
+          <h2 class="section-title" id="github-title"><span class="section-title__index">04</span> <span data-i18n="github.title">GitHub'da son hareketler</span></h2>
+          <p class="section-lead" data-i18n="github.lead">Depolarım GitHub'dan canlı olarak çekiliyor: en son güncellediklerim üstte.</p>
+
+          <div class="github__languages" data-github-languages aria-live="polite"></div>
+
+          <!-- Skeleton cards hold the space until the API answers, so nothing below jumps -->
+          <ol class="repo-list" data-github-repos aria-busy="false">
+            <li class="repo repo--skeleton" aria-hidden="true"></li>
+            <li class="repo repo--skeleton" aria-hidden="true"></li>
+            <li class="repo repo--skeleton" aria-hidden="true"></li>
+            <li class="repo repo--skeleton" aria-hidden="true"></li>
+          </ol>
+          <p class="github__status" data-github-status role="status"></p>
+
+          <a class="github__profile" href="https://github.com/behlulakdag" target="_blank" rel="noopener" data-i18n="github.profileLink">Tüm profilimi GitHub'da gör</a>
+        </div>
+      </section>
+
       <!-- CONTACT -->
       <section class="section contact" id="contact" aria-labelledby="contact-title">
         <div class="container contact__inner">
           <div class="contact__intro">
-            <h2 class="section-title" id="contact-title"><span class="section-title__index">04</span> <span data-i18n="contact.title">İletişim</span></h2>
+            <h2 class="section-title" id="contact-title"><span class="section-title__index">05</span> <span data-i18n="contact.title">İletişim</span></h2>
             <p class="section-lead" data-i18n="contact.lead">Staj, freelance iş ya da sadece merhaba demek için yazın.</p>
             <ul class="contact__links">
               <li><a href="https://github.com/behlulakdag" target="_blank" rel="noopener">GitHub</a></li>

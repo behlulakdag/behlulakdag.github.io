@@ -98,6 +98,16 @@
     "ctaText": "Pricing depends on the project; tell me what you need and I'll reply the same day.",
     "ctaButton": "Get a quote"
   },
+  "github": {
+    "title": "Latest on GitHub",
+    "lead": "My repositories are pulled live from GitHub, most recently updated first.",
+    "profileLink": "See my full GitHub profile",
+    "noDescription": "No description yet.",
+    "updated": "updated {time}",
+    "stars": "{count} stars",
+    "languagesTitle": "Languages across my repositories",
+    "error": "GitHub can't be reached right now. You can browse my repositories through the link below."
+  },
   "contact": {
     "title": "Contact",
     "lead": "Write for an internship, freelance work or just to say hello.",

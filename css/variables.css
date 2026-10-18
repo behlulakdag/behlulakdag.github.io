@@ -14,6 +14,17 @@
   --color-on-accent: #0e1116;
   --color-danger: #f85149;
 
+  /* Programming language colors (GitHub's palette) for the live GitHub section */
+  --lang-javascript: #f1e05a;
+  --lang-typescript: #3178c6;
+  --lang-kotlin: #a97bff;
+  --lang-java: #b07219;
+  --lang-luau: #00a2ff;
+  --lang-html: #e34c26;
+  --lang-css: #663399;
+  --lang-python: #3572a5;
+  --lang-other: #8b949e;
+
   /* Spacing — multiples of 8 (half step for tight spots) */
   --space-1: 4px;
   --space-2: 8px;

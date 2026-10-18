@@ -755,6 +755,191 @@
   border-radius: var(--radius-md);
 }
 
+/* ---------- GitHub ---------- */
+
+/* Without JavaScript only the profile link is shown */
+html:not(.js) .repo-list,
+html:not(.js) .github__languages {
+  display: none;
+}
+
+.github__languages {
+  min-height: 56px; /* reserved so the bar arriving later doesn't push the cards down */
+  margin-bottom: var(--space-5);
+}
+
+.lang-bar {
+  display: flex;
+  gap: 3px;
+  height: 12px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--color-surface-raised);
+}
+
+.lang-bar__segment {
+  flex-basis: 0;
+  min-width: 8px;
+  background: var(--dot-color);
+}
+
+.lang-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-4);
+  margin-top: var(--space-2);
+  padding: 0;
+  list-style: none;
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+}
+
+.lang-legend li {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.lang-legend__percent {
+  color: var(--color-text-muted);
+}
+
+.lang-dot {
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--dot-color);
+  box-shadow: 0 0 0 2px var(--color-surface);
+}
+
+.repo-list {
+  display: grid;
+  gap: var(--space-4);
+  padding: 0;
+  list-style: none;
+}
+
+.repo {
+  position: relative;
+  display: grid;
+  align-content: start;
+  gap: var(--space-2);
+  min-height: 148px;
+  padding: var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-accent);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-offset);
+  transition:
+    transform var(--duration-base) var(--ease-out),
+    border-color var(--duration-base) var(--ease-out);
+}
+
+.repo:hover {
+  transform: translate(-2px, -2px);
+  border-color: var(--color-accent);
+}
+
+/* Shimmering placeholder while the API is answering */
+.repo--skeleton {
+  background: linear-gradient(
+      100deg,
+      transparent 20%,
+      color-mix(in srgb, var(--color-text) 6%, transparent) 50%,
+      transparent 80%
+    )
+    var(--color-surface);
+  background-size: 200% 100%;
+  border-left-color: var(--color-border);
+  animation: shimmer 1.4s linear infinite;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 150% 0;
+  }
+  to {
+    background-position: -50% 0;
+  }
+}
+
+.repo__name {
+  font-size: var(--text-lg);
+  word-break: break-word;
+}
+
+.repo__name a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.repo__name a:hover {
+  color: var(--color-accent);
+}
+
+/* Whole card is clickable through the title link */
+.repo__name a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-md);
+}
+
+.repo__desc {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.repo__desc--empty {
+  font-style: italic;
+}
+
+.repo__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-1) var(--space-3);
+  margin-top: auto;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.repo__lang {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-text);
+}
+
+.github__status:empty {
+  display: none;
+}
+
+.github__status[data-state="error"] {
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--text-sm);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.github.has-error .github__languages {
+  display: none;
+}
+
+.github__profile {
+  display: inline-block;
+  margin-top: var(--space-5);
+  font-family: var(--font-mono);
+  font-weight: 700;
+}
+
+.github__profile::after {
+  content: " ↗";
+}
+
 /* ---------- Contact ---------- */
 
 .contact__inner {
@@ -849,6 +1034,10 @@
   .project-grid {
     grid-template-columns: repeat(2, 1fr);
     row-gap: var(--space-6);
+  }
+
+  .repo-list {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .service-grid {
