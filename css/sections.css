@@ -310,6 +310,7 @@
 
 .hero {
   padding-block: var(--space-6) var(--space-7);
+  overflow-x: clip; /* the 3D model box may reach past the screen edge */
 }
 
 .hero__inner {
@@ -345,13 +346,19 @@
   margin-bottom: var(--space-4);
 }
 
+/* Wider than the terminal on phones so the barbell isn't tiny; .hero clips what spills past the screen edge */
 .hero-model {
   position: absolute;
   z-index: 0;
-  top: -112px;
-  right: calc(-1 * var(--space-3));
-  width: min(92%, 420px);
+  top: -132px;
+  right: -20%;
+  width: 128%;
   aspect-ratio: 640 / 288;
+  pointer-events: none;
+}
+
+.hero-model.is-ready {
+  pointer-events: auto;
 }
 
 .hero-model__fallback,
@@ -387,10 +394,11 @@
 }
 
 /* Small "drag me" tab on the model's top edge, only once the live model is there */
+/* Positioned over the model's top-right shoulder (the model fills roughly the middle 55% of the box) */
 .hero-model__hint {
   position: absolute;
-  top: var(--space-2);
-  right: var(--space-4);
+  top: 8%;
+  right: 22%;
   padding: 2px var(--space-2);
   font-family: var(--font-mono);
   font-size: 0.75rem;
@@ -1154,9 +1162,9 @@ html:not(.js) .github__languages {
   }
 
   .hero-model {
-    top: -170px;
-    right: -88px;
-    width: 560px;
+    top: -190px;
+    right: -150px;
+    width: 680px;
   }
 
   .about__inner {
