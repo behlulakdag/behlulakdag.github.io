@@ -1,0 +1,66 @@
+/* Design tokens: every color, space and font in the site comes from here. */
+
+:root {
+  /* Colors — dark theme is the default look */
+  --color-bg: #0e1116;
+  --color-surface: #161b22;
+  --color-surface-raised: #1c2330;
+  --color-border: #2a313c;
+  --color-text: #e6edf3;
+  --color-text-muted: #8b949e;
+  --color-accent: #3fb950;
+  --color-accent-strong: #56d364;
+  --color-accent-soft: rgba(63, 185, 80, 0.14);
+  --color-on-accent: #0e1116;
+  --color-danger: #f85149;
+
+  /* Spacing — multiples of 8 (half step for tight spots) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 48px;
+  --space-7: 64px;
+  --space-8: 96px;
+
+  /* Typography */
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Code", Consolas, monospace;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.5rem;
+  --text-2xl: clamp(1.75rem, 1.3rem + 2vw, 2.5rem);
+  --text-3xl: clamp(2.25rem, 1.5rem + 3.5vw, 3.75rem);
+  --leading-tight: 1.15;
+  --leading-body: 1.65;
+
+  /* Shape and motion */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --shadow-offset: 6px 6px 0 var(--color-accent-soft);
+  --duration-fast: 0.2s;
+  --duration-base: 0.3s;
+  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  /* Layout */
+  --content-width: 1120px;
+  --header-height: 64px;
+}
+
+/* Light theme — switched on by setting data-theme="light" on <html> (Phase 2) */
+:root[data-theme="light"] {
+  --color-bg: #f7f7f5;
+  --color-surface: #ffffff;
+  --color-surface-raised: #eef0ee;
+  --color-border: #d6d9dc;
+  --color-text: #1b1f24;
+  --color-text-muted: #57606a;
+  --color-accent: #1a7f37;
+  --color-accent-strong: #116329;
+  --color-accent-soft: rgba(26, 127, 55, 0.12);
+  --color-on-accent: #ffffff;
+  --color-danger: #cf222e;
+}
