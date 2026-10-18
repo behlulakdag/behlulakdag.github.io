@@ -2,7 +2,9 @@
 import { initTheme } from "./theme.js";
 import { initTerminal } from "./terminal.js";
 import { initReveal } from "./reveal.js";
+import { initFilter } from "./filter.js";
 
 initTheme();
 initTerminal();
 initReveal();
+initFilter();
