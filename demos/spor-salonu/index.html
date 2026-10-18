@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Demir Atölyesi · Ataşehir güç salonu (örnek çalışma)</title>
+    <meta
+      name="description"
+      content="Demir Atölyesi, Behlül Akdağ'ın hazırladığı hayali bir güç salonu için örnek web sitesidir: üyelik hesaplayıcı, haftalık ders programı ve iletişim."
+    />
+    <!-- Fictional business: kept out of search results so it is never confused with a real gym -->
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#151617" />
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
+
+    <link rel="preload" href="../../assets/fonts/oswald-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- Demo notice: required on every demo site -->
+    <div class="demo-banner" role="note">
+      <p>
+        <strong>Örnek çalışma:</strong> Demir Atölyesi gerçek bir işletme değildir. Bu site
+        <a href="../../">Behlül Akdağ</a>'ın portfolyosu için hazırlandı.
+      </p>
+    </div>
+
+    <header class="header">
+      <div class="container header__inner">
+        <a class="logo" href="#top" aria-label="Demir Atölyesi, sayfanın başına dön">
+          <svg class="logo__plate" viewBox="0 0 40 40" aria-hidden="true">
+            <circle class="logo__plate-outer" cx="20" cy="20" r="18" />
+            <circle class="logo__plate-ring" cx="20" cy="20" r="12" />
+            <circle class="logo__plate-hole" cx="20" cy="20" r="4" />
+          </svg>
+          <span class="logo__text">Demir<span>Atölyesi</span></span>
+        </a>
+        <nav aria-label="Ana menü">
+          <ul class="nav">
+            <li><a href="#membership">Üyelik</a></li>
+            <li><a href="#schedule">Program</a></li>
+            <li><a class="nav__cta" href="#contact">Deneme günü</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <!-- HERO -->
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="container hero__inner">
+          <div class="hero__text">
+            <p class="tag">Ataşehir · güç salonu</p>
+            <h1 class="hero__title" id="hero-title">
+              Ağır kaldır.<br />
+              <span class="hero__title-mark">Akıllı</span> kaldır.
+            </h1>
+            <p class="hero__lead">
+              Yarışma standardı platformlar, kalibre plakalar ve tekniğine gerçekten bakan koçlar. İlk kez bar
+              tutuyorsan da, 250 kg deadlift'e çalışıyorsan da yerin burası.
+            </p>
+            <div class="hero__actions">
+              <a class="button button--hazard" href="#membership">Üyelik fiyatları</a>
+              <a class="button button--outline" href="#schedule">Ders programı</a>
+            </div>
+          </div>
+
+          <div class="hero__art">
+            <svg class="illustration" viewBox="0 0 440 360" role="img" aria-labelledby="hero-art-title">
+              <title id="hero-art-title">Güç kafesinin askısında duran, iki yanı renkli yarışma plakalarıyla yüklü bir bar ve "PR" etiketi</title>
+              <!-- Hazard-striped slab behind the rack -->
+              <rect class="ill-slab" x="20" y="250" width="400" height="44" />
+              <rect class="ill-slab-stripes" x="20" y="250" width="400" height="14" />
+
+              <!-- Rack uprights with J-hooks -->
+              <rect class="ill-upright" x="96" y="30" width="22" height="220" />
+              <rect class="ill-upright" x="322" y="30" width="22" height="220" />
+              <rect class="ill-crossbar" x="88" y="22" width="264" height="14" />
+              <g class="ill-holes">
+                <circle cx="107" cy="60" r="3" /><circle cx="107" cy="80" r="3" /><circle cx="107" cy="100" r="3" /><circle cx="107" cy="160" r="3" /><circle cx="107" cy="180" r="3" /><circle cx="107" cy="200" r="3" />
+                <circle cx="333" cy="60" r="3" /><circle cx="333" cy="80" r="3" /><circle cx="333" cy="100" r="3" /><circle cx="333" cy="160" r="3" /><circle cx="333" cy="180" r="3" /><circle cx="333" cy="200" r="3" />
+              </g>
+              <path class="ill-hook" d="M90 124h34v14h-8v-6H90z" />
+              <path class="ill-hook" d="M350 124h-34v14h8v-6h26z" />
+
+              <!-- Bar -->
+              <rect class="ill-bar" x="6" y="122" width="428" height="8" rx="3" />
+
+              <!-- Left plates, heaviest inside -->
+              <rect class="ill-plate ill-plate--25" x="66" y="62" width="16" height="128" rx="3" />
+              <rect class="ill-plate ill-plate--20" x="50" y="68" width="15" height="116" rx="3" />
+              <rect class="ill-plate ill-plate--15" x="36" y="80" width="13" height="92" rx="3" />
+              <rect class="ill-plate ill-plate--10" x="24" y="92" width="11" height="68" rx="3" />
+              <rect class="ill-collar" x="14" y="114" width="9" height="24" rx="2" />
+
+              <!-- Right plates -->
+              <rect class="ill-plate ill-plate--25" x="358" y="62" width="16" height="128" rx="3" />
+              <rect class="ill-plate ill-plate--20" x="375" y="68" width="15" height="116" rx="3" />
+              <rect class="ill-plate ill-plate--15" x="391" y="80" width="13" height="92" rx="3" />
+              <rect class="ill-plate ill-plate--10" x="405" y="92" width="11" height="68" rx="3" />
+              <rect class="ill-collar" x="417" y="114" width="9" height="24" rx="2" />
+
+              <!-- Chalk bowl and dust -->
+              <path class="ill-bowl" d="M170 232h100l-10 18h-80z" />
+              <g class="ill-chalk">
+                <circle cx="196" cy="222" r="10" /><circle cx="214" cy="214" r="13" /><circle cx="236" cy="222" r="9" />
+                <circle cx="224" cy="200" r="5" /><circle cx="204" cy="204" r="4" />
+              </g>
+
+              <!-- PR sticker overlapping the upright -->
+              <g class="ill-sticker" transform="rotate(-8 340 300)">
+                <rect x="290" y="276" width="110" height="52" rx="4" />
+                <text x="345" y="303" text-anchor="middle" class="ill-sticker-big">PR</text>
+                <text x="345" y="320" text-anchor="middle" class="ill-sticker-small">272,5 KG</text>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- STATS -->
+      <section class="stats" aria-label="Salon hakkında sayılar">
+        <ul class="container stats__list">
+          <li><strong>4</strong><span>yarışma platformu</span></li>
+          <li><strong>6</strong><span>güç kafesi</span></li>
+          <li><strong>3 ton</strong><span>kalibre plaka</span></li>
+          <li><strong>06–24</strong><span>her gün açık</span></li>
+        </ul>
+      </section>
+
+      <!-- MEMBERSHIP -->
+      <section class="section membership" id="membership" aria-labelledby="membership-title" data-membership>
+        <div class="container">
+          <header class="section-head">
+            <p class="tag tag--dark">Üyelik</p>
+            <h2 class="section-title" id="membership-title">Sana uyan paketi seç</h2>
+          </header>
+
+          <!-- Controls appear with JavaScript; without it the monthly prices below are shown as-is -->
+          <form class="membership__controls" data-membership-controls hidden>
+            <fieldset class="segmented">
+              <legend class="segmented__legend">Ödeme dönemi</legend>
+              <label class="segmented__option">
+                <input type="radio" name="period" value="monthly" checked />
+                <span>Aylık</span>
+              </label>
+              <label class="segmented__option">
+                <input type="radio" name="period" value="quarterly" />
+                <span>3 aylık <small>−%10</small></span>
+              </label>
+              <label class="segmented__option">
+                <input type="radio" name="period" value="yearly" />
+                <span>Yıllık <small>−%25</small></span>
+              </label>
+            </fieldset>
+
+            <label class="switch">
+              <input type="checkbox" name="student" />
+              <span class="switch__track" aria-hidden="true"></span>
+              <span>Öğrenciyim <small>(−%20, koçluk hariç)</small></span>
+            </label>
+          </form>
+
+          <ul class="plan-list">
+            <li class="plan" data-plan data-monthly="1400" data-student-eligible>
+              <h3 class="plan__name">Temel</h3>
+              <p class="plan__price"><span data-price>1.400 ₺</span><small> / ay</small></p>
+              <p class="plan__billing" data-billing>Her ay ödenir</p>
+              <ul class="plan__features">
+                <li>06:00–24:00 sınırsız giriş</li>
+                <li>Soyunma odası ve duş</li>
+                <li>İlk gün ücretsiz form kontrolü</li>
+              </ul>
+            </li>
+            <li class="plan plan--featured" data-plan data-monthly="2200" data-student-eligible>
+              <span class="plan__flag">En popüler</span>
+              <h3 class="plan__name">Güç</h3>
+              <p class="plan__price"><span data-price>2.200 ₺</span><small> / ay</small></p>
+              <p class="plan__billing" data-billing>Her ay ödenir</p>
+              <ul class="plan__features">
+                <li>Temel paketteki her şey</li>
+                <li>12 haftalık kişisel program</li>
+                <li>Tüm grup derslerine katılım</li>
+                <li>Ayda bir video form analizi</li>
+              </ul>
+            </li>
+            <li class="plan" data-plan data-monthly="5200">
+              <h3 class="plan__name">Koçluk</h3>
+              <p class="plan__price"><span data-price>5.200 ₺</span><small> / ay</small></p>
+              <p class="plan__billing" data-billing>Her ay ödenir</p>
+              <ul class="plan__features">
+                <li>Güç paketindeki her şey</li>
+                <li>Ayda 8 birebir seans</li>
+                <li>Yarışma hazırlığı ve deneme yarışı</li>
+              </ul>
+            </li>
+          </ul>
+          <p class="membership__note">Fiyatlar örnektir. Öğrenci indirimi için geçerli öğrenci belgesi istenir.</p>
+        </div>
+      </section>
+
+      <!-- SCHEDULE -->
+      <section class="section schedule" id="schedule" aria-labelledby="schedule-title" data-schedule>
+        <div class="container">
+          <header class="section-head">
+            <p class="tag">Program</p>
+            <h2 class="section-title" id="schedule-title">Haftalık dersler</h2>
+          </header>
+
+          <div class="schedule__controls">
+            <div class="day-tabs" role="tablist" aria-label="Günler" data-day-tabs hidden></div>
+            <div class="level-filter" role="group" aria-label="Seviyeye göre filtrele" data-level-filter hidden></div>
+          </div>
+          <p class="visually-hidden" aria-live="polite" data-schedule-status></p>
+
+          <div class="days">
+            <section class="day" id="day-mon" data-day data-short="Pzt" aria-labelledby="day-mon-title">
+              <h3 class="day__title" id="day-mon-title">Pazartesi</h3>
+              <ul class="class-list">
+                <li class="class" data-level="open"><time>07:00</time><span class="class__name">Mobilite</span><span class="class__meta">45 dk · Ece</span><span class="level level--open">Her seviye</span></li>
+                <li class="class" data-level="beginner"><time>18:30</time><span class="class__name">Squat tekniği</span><span class="class__meta">60 dk · Mert</span><span class="level level--beginner">Başlangıç</span></li>
+                <li class="class" data-level="advanced"><time>20:00</time><span class="class__name">Powerlifting kulübü</span><span class="class__meta">90 dk · Deniz</span><span class="level level--advanced">İleri</span></li>
+              </ul>
+              <p class="day__empty" data-empty hidden>Bu gün bu seviyede ders yok. Açık salon her zaman senin.</p>
+            </section>
+
+            <section class="day" id="day-tue" data-day data-short="Sal" aria-labelledby="day-tue-title">
+              <h3 class="day__title" id="day-tue-title">Salı</h3>
+              <ul class="class-list">
+                <li class="class" data-level="intermediate"><time>07:00</time><span class="class__name">Kettlebell</span><span class="class__meta">45 dk · Ece</span><span class="level level--intermediate">Orta</span></li>
+                <li class="class" data-level="beginner"><time>19:00</time><span class="class__name">Deadlift kliniği</span><span class="class__meta">60 dk · Deniz</span><span class="level level--beginner">Başlangıç</span></li>
+              </ul>
+              <p class="day__empty" data-empty hidden>Bu gün bu seviyede ders yok. Açık salon her zaman senin.</p>
+            </section>
+
+            <section class="day" id="day-wed" data-day data-short="Çar" aria-labelledby="day-wed-title">
+              <h3 class="day__title" id="day-wed-title">Çarşamba</h3>
+              <ul class="class-list">
+                <li class="class" data-level="intermediate"><time>18:30</time><span class="class__name">Bench günü</span><span class="class__meta">60 dk · Mert</span><span class="level level--intermediate">Orta</span></li>
+                <li class="class" data-level="advanced"><time>20:00</time><span class="class__name">Strongman</span><span class="class__meta">75 dk · Deniz</span><span class="level level--advanced">İleri</span></li>
+              </ul>
+              <p class="day__empty" data-empty hidden>Bu gün bu seviyede ders yok. Açık salon her zaman senin.</p>
+            </section>
+
+            <section class="day" id="day-thu" data-day data-short="Per" aria-labelledby="day-thu-title">
+              <h3 class="day__title" id="day-thu-title">Perşembe</h3>
+              <ul class="class-list">
+                <li class="class" data-level="open"><time>07:00</time><span class="class__name">Mobilite</span><span class="class__meta">45 dk · Ece</span><span class="level level--open">Her seviye</span></li>
+                <li class="class" data-level="intermediate"><time>19:00</time><span class="class__name">Kondisyon</span><span class="class__meta">45 dk · Mert</span><span class="level level--intermediate">Orta</span></li>
+              </ul>
+              <p class="day__empty" data-empty hidden>Bu gün bu seviyede ders yok. Açık salon her zaman senin.</p>
+            </section>
+
+            <section class="day" id="day-fri" data-day data-short="Cum" aria-labelledby="day-fri-title">
+              <h3 class="day__title" id="day-fri-title">Cuma</h3>
+              <ul class="class-list">
+                <li class="class" data-level="beginner"><time>18:30</time><span class="class__name">Squat tekniği</span><span class="class__meta">60 dk · Mert</span><span class="level level--beginner">Başlangıç</span></li>
+                <li class="class" data-level="advanced"><time>20:00</time><span class="class__name">Powerlifting kulübü</span><span class="class__meta">90 dk · Deniz</span><span class="level level--advanced">İleri</span></li>
+              </ul>
+              <p class="day__empty" data-empty hidden>Bu gün bu seviyede ders yok. Açık salon her zaman senin.</p>
+            </section>
+
+            <section class="day" id="day-sat" data-day data-short="Cmt" aria-labelledby="day-sat-title">
+              <h3 class="day__title" id="day-sat-title">Cumartesi</h3>
+              <ul class="class-list">
+                <li class="class" data-level="open"><time>10:00</time><span class="class__name">Deneme yarışı (mock meet)</span><span class="class__meta">120 dk · Deniz</span><span class="level level--open">Her seviye</span></li>
+                <li class="class" data-level="beginner"><time>12:30</time><span class="class__name">Kadınlar için güç</span><span class="class__meta">60 dk · Ece</span><span class="level level--beginner">Başlangıç</span></li>
+              </ul>
+              <p class="day__empty" data-empty hidden>Bu gün bu seviyede ders yok. Açık salon her zaman senin.</p>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="section contact" id="contact" aria-labelledby="contact-title">
+        <div class="container contact__inner">
+          <div>
+            <p class="tag tag--dark">Deneme günü</p>
+            <h2 class="section-title" id="contact-title">İlk antrenman bizden</h2>
+            <p class="contact__lead">
+              Resepsiyona uğra ya da ara; koçlardan biri seninle salonu gezsin, ilk antrenmanını birlikte yapın.
+              Yanına sadece spor ayakkabı ve havlu al.
+            </p>
+          </div>
+          <dl class="contact__info">
+            <div><dt>Adres</dt><dd>Örnek Bulvarı No: 42, Ataşehir / İstanbul</dd></div>
+            <div><dt>Telefon</dt><dd>0 (216) 000 00 00</dd></div>
+            <div><dt>Saatler</dt><dd>Her gün 06:00 – 24:00</dd></div>
+            <div><dt>Not</dt><dd>Adres ve telefon temsilidir.</dd></div>
+          </dl>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <p class="footer__logo">Demir Atölyesi</p>
+        <p>
+          Bu bir örnek çalışmadır; marka, koçlar ve iletişim bilgileri hayalidir.<br />
+          Tasarım ve kod: <a href="../../">Behlül Akdağ</a>
+        </p>
+      </div>
+    </footer>
+
+    <script type="module" src="js/membership.js"></script>
+    <script type="module" src="js/schedule.js"></script>
+  </body>
+</html>
