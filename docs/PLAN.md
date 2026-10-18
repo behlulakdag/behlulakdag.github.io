@@ -200,7 +200,7 @@ portfolio/
 - [x] Demo site 1: Kafe ("Demlik", `demos/kafe/`)
 - [x] Demo site 2: Berber / kuaför ("Ustura", `demos/berber/`, randevu formlu)
 - [x] Demo site 3: Spor salonu ("Demir Atölyesi", `demos/spor-salonu/`, üyelik hesaplayıcı + ders programı)
-- [ ] TR / EN dil düğmesi
+- [x] TR / EN dil düğmesi (portfolyo; demolar Türkçe kalır. Upwork için link: `behlulakdag.github.io/?lang=en`)
 - [ ] Canlı GitHub bölümü
 - [ ] Kapı: Fiverr gig'lerinde demo sitelerin ekran görüntüleri kullanılıyor
 

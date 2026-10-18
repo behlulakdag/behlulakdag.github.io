@@ -91,6 +91,22 @@
 - Tests: 44 passing.
 - Lighthouse (live): home 100 ×4; gym 100 / 100 / 100 / SEO 60 (intentional `noindex`).
 
+## 2026-10-18 — Session 1 (cont.): Phase 3 — TR / EN
+
+**Done**
+- `lang/tr.json` + `lang/en.json` (same keys), `js/i18n.js`. Turkish stays written in the HTML; 93 elements carry `data-i18n` / `data-i18n-html` / `data-i18n-attr` keys.
+- Language choice: saved choice > `?lang=en` link > browser language > Turkish. Only a button click is saved; the link and browser language are re-checked each visit.
+- Square language button next to the theme button shows the target language ("EN" / "TR"). Header becomes two rows under 480px.
+- Terminal script, filter labels, result count and theme button label all follow the `languagechange` event. Contact form topics now send stable values (`website-quote`, `internship-job`, `other`) whatever the language.
+- English visitors: head script hides the page until `en.json` is applied (preloaded, 1.5s safety timeout) → no visible swap. Lighthouse en-US mobile CLS 0.093 → 0.
+- Demo sites stay Turkish only (they are Turkish businesses).
+- Tests: 61 passing. New checks: same keys in both JSON files, every HTML key exists, Turkish HTML text and attributes match `tr.json`, terminal fallback matches `tr.json`.
+- Lighthouse (live): TR mobile 99/100/100/100, EN mobile 98/100/100/100 (LCP 2.1s, CLS 0), EN desktop 100 ×4.
+
+**For Behlül**
+- Use `https://behlulakdag.github.io/?lang=en` on Upwork so clients land on English.
+- English copy was written by Claude — read it once and adjust anything that doesn't sound like you.
+
 **Next step**
-- Phase 3: TR/EN language switch for the portfolio, then the live GitHub section.
+- Phase 3: live GitHub section (latest repos via the GitHub REST API).
 - Phase 3 gate (Behlül): use the demo screenshots in Fiverr gigs.
