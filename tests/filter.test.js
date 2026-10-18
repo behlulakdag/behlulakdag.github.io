@@ -20,6 +20,10 @@ test("matchesFilter: 'all' shows everything, otherwise exact category", () => {
   assert.equal(matchesFilter("software", "game"), false);
 });
 
-test("resultLabel reads naturally in Turkish", () => {
+test("resultLabel reads naturally in Turkish by default", () => {
   assert.equal(resultLabel(3), "3 proje gösteriliyor");
+});
+
+test("resultLabel uses the translated template when given", () => {
+  assert.equal(resultLabel(3, "Showing {count} projects"), "Showing 3 projects");
 });
