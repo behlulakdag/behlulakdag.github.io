@@ -558,6 +558,42 @@
   transform: scale(1.04);
 }
 
+/* Gameplay clip sits on top of the cover image and fades in once it actually plays */
+.project-card__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity var(--duration-base) var(--ease-out);
+}
+
+.project-card__video.is-playing {
+  opacity: 1;
+}
+
+/* "Video" hint tab, shown only where hover previews are enabled */
+.project-card__media.has-preview::after {
+  content: "▶ video";
+  position: absolute;
+  right: var(--space-2);
+  bottom: var(--space-2);
+  padding: 2px var(--space-2);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-accent);
+  background: var(--color-bg);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-sm);
+  transition: opacity var(--duration-fast) var(--ease-out);
+}
+
+.project-card:hover .project-card__media.has-preview::after,
+.project-card:focus-within .project-card__media.has-preview::after {
+  opacity: 0;
+}
+
 .project-card__media--code {
   display: flex;
   align-items: center;
