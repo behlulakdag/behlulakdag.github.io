@@ -114,6 +114,21 @@
   border-radius: var(--radius-sm);
 }
 
+/* Scroll reveal — .reveal-ready is added by js/reveal.js, never when motion is reduced */
+.reveal-ready :is(.section-title, .section-lead, .about__photo, .about__text, .project-grid > li, .service-card, .services__cta, .contact__intro, .contact-form) {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.4s var(--ease-out) var(--reveal-delay, 0ms),
+    transform 0.4s var(--ease-out) var(--reveal-delay, 0ms);
+}
+
+/* Same selector list plus .is-visible, so this always outranks the hidden state above */
+.reveal-ready :is(.section-title, .section-lead, .about__photo, .about__text, .project-grid > li, .service-card, .services__cta, .contact__intro, .contact-form).is-visible {
+  opacity: 1;
+  transform: none;
+}
+
 /* ---------- Header ---------- */
 
 .site-header {
