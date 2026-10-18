@@ -1,0 +1,118 @@
+{
+  "meta": {
+    "title": "Behlül Akdağ · Yazılım Geliştirici ve Web Tasarımcı",
+    "description": "Bilgisayar mühendisliği öğrencisi Behlül Akdağ'ın portfolyosu: Android ve web uygulamaları, Roblox oyunları ve küçük işletmeler için hızlı, mobil uyumlu web siteleri."
+  },
+  "a11y": {
+    "skip": "İçeriğe geç"
+  },
+  "header": {
+    "brandLabel": "Behlül Akdağ, sayfanın başına dön",
+    "navLabel": "Ana menü",
+    "projects": "Projeler",
+    "services": "Hizmetler",
+    "contact": "İletişim"
+  },
+  "theme": {
+    "toLight": "Aydınlık temaya geç",
+    "toDark": "Karanlık temaya geç"
+  },
+  "lang": {
+    "switchLabel": "Switch to English"
+  },
+  "hero": {
+    "eyebrow": "Bilgisayar mühendisliği öğrencisi · İstanbul",
+    "title": "Merhaba, ben <span class=\"text-accent\">Behlül</span>.<br>Uygulama, oyun ve web sitesi yapıyorum.",
+    "lead": "Android ve web uygulamaları geliştiriyor, Roblox'ta oyun yayınlıyor ve küçük işletmeler için hızlı, mobil uyumlu siteler tasarlıyorum.",
+    "ctaProjects": "Projelerimi gör",
+    "ctaQuote": "Teklif iste"
+  },
+  "terminal": {
+    "label": "Terminal görünümünde kısa tanıtım",
+    "skipHint": "Atlamak için tıkla",
+    "script": [
+      { "command": "whoami", "output": ["Behlül Akdağ", "Yazılım geliştirici · Web tasarımcı"] },
+      { "command": "ls skills/", "output": ["java  kotlin  luau  html  css  javascript"] },
+      { "command": "status", "output": [{ "text": "● staj ve freelance işlere açık", "accent": true }] }
+    ],
+    "chipsLabel": "Öne çıkanlar",
+    "chipProjects": "5 proje yayında",
+    "chipGames": "3 Roblox oyunu"
+  },
+  "about": {
+    "photoAlt": "Behlül Akdağ'ın gri fon önünde vesikalık portre fotoğrafı",
+    "title": "Hakkımda",
+    "p1": "İstanbul Aydın Üniversitesi'nde bilgisayar mühendisliği okuyorum. Java ile masaüstü uygulamalardan başladım; şimdi Kotlin ile Android, Spring Boot ile backend ve saf HTML/CSS/JavaScript ile web tarafında çalışıyorum.",
+    "p2": "Boş zamanımda Roblox'ta Luau ile oyun geliştiriyorum ve powerlifting yapıyorum. Antrenmanlarımı takip etmek için yazdığım LiftLog da buradan doğdu.",
+    "toolsTitle": "Kullandığım araçlar",
+    "toolsLabel": "Yetenekler"
+  },
+  "projects": {
+    "title": "Projeler",
+    "lead": "Yazılım, oyun ve web işlerinden seçmeler. Hepsinin kodu ya da canlı sürümü açık.",
+    "filterLabel": "Projeleri kategoriye göre filtrele",
+    "filterAll": "Tümü",
+    "filterSoftware": "Yazılım",
+    "filterGame": "Oyun",
+    "filterWeb": "Web siteleri",
+    "resultCount": "{count} proje gösteriliyor",
+    "techLabel": "Teknolojiler",
+    "statusWip": "Yapım aşamasında",
+    "badgeSample": "Örnek çalışma",
+    "liveDemo": "Canlı demo",
+    "play": "Oyna",
+    "kindRoblox": "Roblox oyunu",
+    "liftlogAlt": "LiftLog uygulamasının antrenman listesi, ilerleme grafikleri ve antrenman detayı ekranları",
+    "liftlogKind": "Mobil + web + backend",
+    "liftlogDesc": "Antrenman takip uygulaması: set, tekrar ve ağırlıkları kaydet, kişisel rekorlarını ve tahmini 1RM grafiğini izle. Android ve iPhone (PWA) aynı JWT korumalı API'yi kullanıyor.",
+    "todoKind": "Masaüstü uygulaması",
+    "todoTitle": "Akıllı Planlayıcı (To-Do)",
+    "todoDesc": "Pastel temalı, karanlık modlu görev ve günlük uygulaması. Gömülü SQLite veritabanı ve Google Gemini ile çalışan bir planlama asistanı var; Java kurmadan çalışan .exe olarak paketlendi.",
+    "garbageAlt": "Garbage King: lunaparkın üzerinde yükselen dev çöp torbası yığını",
+    "garbageDesc": "Çöple kaplı bir lunaparkı bölge bölge temizlediğin rahat bir oyun. Yüzey başına kir sistemi, fizik hissi veren aletler ve takım oyunu. 6 haftada 2.100+ commit, yaklaşık 107 bin satır Luau.",
+    "smashAlt": "Smash for Eggs: tahta çekiçle başlayan karakterin 99. seviyede elektrikli çekice ulaşması",
+    "smashDesc": "Zemini çekiçle kırıp derine in, canavarlardan yumurta çal ve çiftliğinde para kazandıran evcil hayvanlar çıkar. Derinleştikçe ödüller büyüyor; yükseltme ve yeniden doğma sistemi var.",
+    "chefAlt": "Build a Chef: yan yana dizilmiş farklı nadirlikteki şef karakterleri",
+    "chefDesc": "Şef parçaları için zar at, beş parçayı birleştirip şef oluştur ve adadaki en işlek mutfağı yönet. Nadirlik sistemi, günlük teklifler ve arkadaşlar arası takas içeriyor.",
+    "demlikAlt": "Demlik kafe sitesinin ana ekranı: 'Yavaş demlenir, keyifle içilir' başlığı ve çizim bir kahve fincanı",
+    "demlikKind": "Web sitesi · kafe",
+    "demlikDesc": "Hayali bir Kadıköy kahvecisi için tek sayfalık site: sekmeli menü, hikâye, çalışma saatleri ve konum. Tüm çizimler SVG ile elde yapıldı; telefonda hızlı açılıyor.",
+    "usturaAlt": "Ustura berber sitesinin ana ekranı: 'Eski usul tıraş, yeni nesil özen' başlığı, berber direği ve 1987 mührü",
+    "usturaKind": "Web sitesi · berber",
+    "usturaDesc": "Klasik bir berber için randevu odaklı site. Form, çalışma saatlerine ve hizmet süresine göre boş saatleri kendisi çıkarıyor; pazartesi ve geçmiş saatleri gizliyor, telefonu doğruluyor.",
+    "usturaTag": "Form doğrulama",
+    "demirAlt": "Demir Atölyesi spor salonu sitesinin ana ekranı: 'Ağır kaldır. Akıllı kaldır.' başlığı ve renkli plakalarla yüklü bar çizimi",
+    "demirKind": "Web sitesi · spor salonu",
+    "demirDesc": "Güç salonu için üyelik hesaplayıcılı site: ödeme dönemi ve öğrenci indirimine göre fiyatlar anında değişiyor. Haftalık ders programı gün ve seviyeye göre filtreleniyor.",
+    "demirTag": "Erişilebilir sekmeler"
+  },
+  "services": {
+    "title": "Hizmetler",
+    "lead": "İşletmenize hızlı açılan, telefonda düzgün görünen ve kolayca güncellenebilen bir site.",
+    "landingTitle": "Tanıtım sayfası",
+    "landingDesc": "Tek sayfalık, hızlı bir landing page: hizmetleriniz, iletişim bilgileriniz ve harita tek yerde.",
+    "smallBizTitle": "Küçük işletme sitesi",
+    "smallBizDesc": "3–5 sayfalık site: menü ya da hizmet listesi, galeri, randevu veya iletişim formu.",
+    "redesignTitle": "Site yenileme",
+    "redesignDesc": "Eski sitenizi modern bir görünüme kavuşturup mobil uyumlu ve daha hızlı hâle getiriyorum.",
+    "ctaText": "Fiyat projeye göre değişir; ihtiyacınızı yazın, aynı gün dönüş yapayım.",
+    "ctaButton": "Teklif iste"
+  },
+  "contact": {
+    "title": "İletişim",
+    "lead": "Staj, freelance iş ya da sadece merhaba demek için yazın.",
+    "subject": "Portfolyo: yeni mesaj",
+    "name": "Adınız",
+    "email": "E-posta",
+    "topic": "Konu",
+    "topicQuote": "Web sitesi teklifi",
+    "topicJob": "Staj / iş",
+    "topicOther": "Diğer",
+    "message": "Mesajınız",
+    "honeypot": "Bu alanı boş bırakın",
+    "submit": "Gönder"
+  },
+  "footer": {
+    "text": "© 2026 Behlül Akdağ · Elle yazıldı: HTML, CSS, JavaScript"
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "meta": {
+    "title": "Behlül Akdağ · Software Developer and Web Designer",
+    "description": "Portfolio of computer engineering student Behlül Akdağ: Android and web apps, Roblox games, and fast, mobile-friendly websites for small businesses."
+  },
+  "a11y": {
+    "skip": "Skip to content"
+  },
+  "header": {
+    "brandLabel": "Behlül Akdağ, back to top",
+    "navLabel": "Main menu",
+    "projects": "Projects",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "theme": {
+    "toLight": "Switch to light theme",
+    "toDark": "Switch to dark theme"
+  },
+  "lang": {
+    "switchLabel": "Türkçeye geç"
+  },
+  "hero": {
+    "eyebrow": "Computer engineering student · Istanbul",
+    "title": "Hi, I'm <span class=\"text-accent\">Behlül</span>.<br>I build apps, games and websites.",
+    "lead": "I develop Android and web apps, publish games on Roblox, and design fast, mobile-friendly websites for small businesses.",
+    "ctaProjects": "See my projects",
+    "ctaQuote": "Get a quote"
+  },
+  "terminal": {
+    "label": "Short intro styled as a terminal",
+    "skipHint": "Click to skip",
+    "script": [
+      { "command": "whoami", "output": ["Behlül Akdağ", "Software developer · Web designer"] },
+      { "command": "ls skills/", "output": ["java  kotlin  luau  html  css  javascript"] },
+      { "command": "status", "output": [{ "text": "● open to internships and freelance work", "accent": true }] }
+    ],
+    "chipsLabel": "Highlights",
+    "chipProjects": "5 projects live",
+    "chipGames": "3 Roblox games"
+  },
+  "about": {
+    "photoAlt": "Headshot of Behlül Akdağ against a grey background",
+    "title": "About",
+    "p1": "I study computer engineering at Istanbul Aydın University. I started with desktop apps in Java; now I work on Android with Kotlin, backends with Spring Boot, and the web with plain HTML, CSS and JavaScript.",
+    "p2": "In my free time I make games on Roblox with Luau and do powerlifting. LiftLog, the app I wrote to track my training, came out of that.",
+    "toolsTitle": "Tools I use",
+    "toolsLabel": "Skills"
+  },
+  "projects": {
+    "title": "Projects",
+    "lead": "A selection of software, games and web work. Every one has public code or a live version.",
+    "filterLabel": "Filter projects by category",
+    "filterAll": "All",
+    "filterSoftware": "Software",
+    "filterGame": "Games",
+    "filterWeb": "Websites",
+    "resultCount": "Showing {count} projects",
+    "techLabel": "Technologies",
+    "statusWip": "In progress",
+    "badgeSample": "Sample work",
+    "liveDemo": "Live demo",
+    "play": "Play",
+    "kindRoblox": "Roblox game",
+    "liftlogAlt": "LiftLog screens: workout list, progress charts and workout detail",
+    "liftlogKind": "Mobile + web + backend",
+    "liftlogDesc": "A workout tracker: log sets, reps and weights, and follow your personal records and estimated 1RM chart. Android and iPhone (PWA) share the same JWT-secured API.",
+    "todoKind": "Desktop app",
+    "todoTitle": "Smart Planner (To-Do)",
+    "todoDesc": "A pastel-themed task and journal app with dark mode. It has an embedded SQLite database and a planning assistant powered by Google Gemini, packaged as an .exe that runs without installing Java.",
+    "garbageAlt": "Garbage King: a giant pile of trash bags rising over an amusement park",
+    "garbageDesc": "A cozy game where you clean a trash-covered amusement park zone by zone. Per-surface dirt, tools that feel physical, and team play. 2,100+ commits in 6 weeks, about 107k lines of Luau.",
+    "smashAlt": "Smash for Eggs: a character going from a wooden hammer to an electric hammer at level 99",
+    "smashDesc": "Smash through the floor, steal eggs from sleeping monsters and hatch pets that earn money on your farm. Rewards grow the deeper you dig, with upgrades and rebirths.",
+    "chefAlt": "Build a Chef: chef characters of different rarities standing in a row",
+    "chefDesc": "Roll for chef parts, combine five into a chef and run the busiest kitchen on the island. Includes a rarity system, daily deals and trading between friends.",
+    "demlikAlt": "Home screen of the Demlik café site: the headline 'Slowly brewed, enjoyed' and an illustrated coffee cup",
+    "demlikKind": "Website · café",
+    "demlikDesc": "A one-page site for a fictional Kadıköy coffee shop: tabbed menu, story, opening hours and location. Every illustration is hand-made SVG; it loads fast on phones.",
+    "usturaAlt": "Home screen of the Ustura barber site: the headline 'Old-school shave, new-school care', a barber pole and a 1987 seal",
+    "usturaKind": "Website · barber",
+    "usturaDesc": "A booking-focused site for a classic barber. The form works out free slots from opening hours and service length, hides Mondays and past times, and validates the phone number.",
+    "usturaTag": "Form validation",
+    "demirAlt": "Home screen of the Demir Atölyesi gym site: the headline 'Lift heavy. Lift smart.' and a barbell loaded with colored plates",
+    "demirKind": "Website · gym",
+    "demirDesc": "A strength gym site with a membership calculator: prices update instantly with billing period and student discount. The weekly class schedule filters by day and level.",
+    "demirTag": "Accessible tabs"
+  },
+  "services": {
+    "title": "Services",
+    "lead": "A website for your business that loads fast, looks right on phones and is easy to update.",
+    "landingTitle": "Landing page",
+    "landingDesc": "A fast one-page site: your services, contact details and map in one place.",
+    "smallBizTitle": "Small business website",
+    "smallBizDesc": "A 3–5 page site: menu or service list, gallery, booking or contact form.",
+    "redesignTitle": "Website redesign",
+    "redesignDesc": "I give your old site a modern look and make it mobile-friendly and faster.",
+    "ctaText": "Pricing depends on the project; tell me what you need and I'll reply the same day.",
+    "ctaButton": "Get a quote"
+  },
+  "contact": {
+    "title": "Contact",
+    "lead": "Write for an internship, freelance work or just to say hello.",
+    "subject": "Portfolio: new message",
+    "name": "Your name",
+    "email": "Email",
+    "topic": "Topic",
+    "topicQuote": "Website quote",
+    "topicJob": "Internship / job",
+    "topicOther": "Other",
+    "message": "Your message",
+    "honeypot": "Leave this field empty",
+    "submit": "Send"
+  },
+  "footer": {
+    "text": "© 2026 Behlül Akdağ · Hand-written HTML, CSS and JavaScript"
+  }
+}
