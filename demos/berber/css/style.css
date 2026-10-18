@@ -1,0 +1,802 @@
+/* Ustura (demo) â€” page styles, mobile first. Self-contained so the folder could be handed to a client as-is. */
+
+/* ---------- Reset ---------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-height) + var(--space-3));
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+select,
+button {
+  font: inherit;
+  color: inherit;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 3px;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-brass);
+  outline-offset: 3px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.05;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+}
+
+.container {
+  width: min(100% - 2 * var(--space-3), var(--content-width));
+  margin-inline: auto;
+}
+
+/* ---------- Shared pieces ---------- */
+
+.demo-banner {
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-red-dark);
+  color: var(--color-cream);
+  font-size: var(--text-sm);
+  text-align: center;
+}
+
+.demo-banner a {
+  font-weight: 600;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-brass);
+}
+
+/* Small diamond before every eyebrow, like a sign ornament */
+.eyebrow::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: currentColor;
+  transform: rotate(45deg);
+}
+
+.eyebrow--dark {
+  color: var(--color-brass-dark);
+}
+
+.section {
+  padding-block: var(--space-7);
+}
+
+.section-title {
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-5);
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: var(--space-2) var(--space-5);
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition:
+    transform var(--duration) var(--ease-out),
+    box-shadow var(--duration) var(--ease-out),
+    background-color var(--duration) var(--ease-out);
+}
+
+.button--primary {
+  background: var(--color-red);
+  color: var(--color-cream);
+  box-shadow: 4px 4px 0 var(--color-brass);
+}
+
+.button--primary:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--color-brass);
+}
+
+.button--ghost {
+  border-color: var(--color-cream);
+  color: var(--color-cream);
+}
+
+.button--ghost:hover {
+  background: var(--color-ink-soft);
+}
+
+.button--ghost-dark {
+  border-color: var(--color-ink);
+  color: var(--color-ink);
+}
+
+.button--ghost-dark:hover {
+  background: var(--color-cream);
+}
+
+/* ---------- Header ---------- */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--color-ink);
+  color: var(--color-cream);
+  border-bottom: 3px double var(--color-brass);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: var(--header-height);
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.logo__pole {
+  flex-shrink: 0; /* otherwise flexbox squeezes the pole on narrow screens */
+  width: 14px;
+  height: 36px;
+}
+
+.logo__cap {
+  fill: var(--color-brass);
+}
+
+.logo__glass {
+  fill: var(--color-cream);
+}
+
+.logo__stripe {
+  stroke: var(--color-red);
+  stroke-width: 2.5;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 0;
+  list-style: none;
+}
+
+.nav a {
+  display: block;
+  padding: var(--space-2) 0;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--color-text-on-dark-muted);
+}
+
+.nav a:hover {
+  color: var(--color-cream);
+}
+
+.nav .nav__cta {
+  padding: var(--space-1) var(--space-3);
+  color: var(--color-ink);
+  background: var(--color-brass);
+  border-radius: var(--radius-sm);
+}
+
+.nav .nav__cta:hover {
+  color: var(--color-ink);
+  background: var(--color-cream);
+}
+
+/* Small phones: keep only the booking button; the other sections are one scroll away */
+@media (max-width: 419px) {
+  .nav li:not(:last-child) {
+    display: none;
+  }
+}
+
+/* ---------- Illustrations ---------- */
+
+.illustration {
+  width: 100%;
+  height: auto;
+}
+
+.ill-panel {
+  fill: var(--color-ink-soft);
+}
+
+.ill-panel-outline {
+  fill: none;
+  stroke: var(--color-brass);
+  stroke-width: 2;
+}
+
+.ill-pole-cap,
+.ill-pole-knob {
+  fill: var(--color-brass);
+}
+
+.ill-pole-glass {
+  fill: var(--color-cream);
+}
+
+.ill-stripe-red {
+  fill: var(--color-red);
+}
+
+.ill-stripe-blue {
+  fill: var(--color-navy);
+}
+
+.ill-pole-shine {
+  fill: var(--color-white);
+  opacity: 0.35;
+}
+
+/* Stripes slide up forever, which reads as the pole spinning */
+.ill-pole-stripes {
+  animation: pole-spin 2.4s linear infinite;
+}
+
+@keyframes pole-spin {
+  to {
+    transform: translateY(-70px);
+  }
+}
+
+.ill-razor-handle {
+  fill: var(--color-ink);
+  stroke: var(--color-brass);
+  stroke-width: 3;
+}
+
+.ill-razor-pin {
+  fill: var(--color-brass);
+}
+
+.ill-razor-blade {
+  fill: var(--color-steel);
+  stroke: var(--color-ink);
+  stroke-width: 3;
+}
+
+.ill-seal-bg {
+  fill: var(--color-red);
+}
+
+.ill-seal-ring {
+  fill: none;
+  stroke: var(--color-cream);
+  stroke-width: 2;
+  stroke-dasharray: 3 5;
+}
+
+.ill-seal-text {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  fill: var(--color-cream);
+}
+
+.ill-seal-year {
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 700;
+  fill: var(--color-cream);
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  padding-block: var(--space-6) var(--space-7);
+  background: var(--color-ink);
+  color: var(--color-text-on-dark);
+}
+
+.hero__inner {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.hero__title {
+  font-size: var(--text-3xl);
+  margin-bottom: var(--space-4);
+}
+
+.hero__title-accent {
+  color: var(--color-brass);
+}
+
+.hero__lead {
+  max-width: 46ch;
+  font-size: var(--text-lg);
+  color: var(--color-text-on-dark-muted);
+  margin-bottom: var(--space-5);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.hero__art {
+  width: min(100%, 420px);
+  justify-self: center;
+}
+
+/* ---------- Services ---------- */
+
+.service-list {
+  display: grid;
+  gap: var(--space-4);
+  padding: 0;
+  list-style: none;
+}
+
+.service {
+  position: relative;
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-top: 4px solid var(--color-ink);
+  border-radius: var(--radius-sm);
+}
+
+.service--featured {
+  border-top-color: var(--color-red);
+  box-shadow: 6px 6px 0 var(--color-cream);
+}
+
+/* Ribbon hangs off the top edge of the featured card */
+.service__ribbon {
+  position: absolute;
+  top: calc(-1 * var(--space-3));
+  right: var(--space-3);
+  padding: 2px var(--space-2);
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-cream);
+  background: var(--color-red);
+  border-radius: var(--radius-sm);
+}
+
+.service__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.service__name {
+  font-size: var(--text-xl);
+}
+
+.service__price {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--color-red-dark);
+  white-space: nowrap;
+}
+
+.service__desc {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.service__time {
+  justify-self: start;
+  padding: 0 var(--space-2);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-brass-dark);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+}
+
+.services__note {
+  margin-top: var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+/* ---------- Barbers ---------- */
+
+.barbers {
+  background: var(--color-ink);
+  color: var(--color-text-on-dark);
+}
+
+.barber-list {
+  display: grid;
+  gap: var(--space-5);
+  padding: 0;
+  list-style: none;
+}
+
+.barber {
+  position: relative;
+  padding: var(--space-5) var(--space-4) var(--space-4);
+  border: 1px solid var(--color-border-dark);
+  border-radius: var(--radius-md);
+}
+
+/* Monogram badge sits on the card's top border */
+.barber__monogram {
+  position: absolute;
+  top: calc(-1 * var(--space-4));
+  left: var(--space-4);
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-ink);
+  background: var(--color-brass);
+  border: 3px solid var(--color-ink);
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px var(--color-brass);
+}
+
+.barber__name {
+  font-size: var(--text-xl);
+}
+
+.barber__role {
+  margin-bottom: var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-brass);
+}
+
+.barber__desc {
+  font-size: var(--text-sm);
+  color: var(--color-text-on-dark-muted);
+}
+
+/* ---------- Booking ---------- */
+
+.booking__inner {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.booking__intro > p {
+  max-width: 48ch;
+  margin-bottom: var(--space-4);
+  color: var(--color-text-muted);
+}
+
+.hours {
+  display: grid;
+  gap: var(--space-1);
+  margin-bottom: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-brass-dark);
+  border-radius: var(--radius-sm);
+  background: var(--color-white);
+}
+
+.hours__row {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.hours dt {
+  color: var(--color-text-muted);
+}
+
+.hours dd {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.hours__row--closed dd {
+  color: var(--color-red-dark);
+}
+
+.booking__address {
+  font-style: normal;
+}
+
+.fineprint {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.booking__card {
+  position: relative;
+  padding: var(--space-4);
+  background: var(--color-white);
+  border: 2px solid var(--color-ink);
+  border-radius: var(--radius-md);
+  box-shadow: 8px 8px 0 var(--color-ink);
+}
+
+.booking-form {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.booking-form[hidden],
+.confirmation[hidden] {
+  display: none;
+}
+
+.field {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.field label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+.field input,
+.field select {
+  width: 100%;
+  min-height: 48px;
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-paper);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+.field input:focus,
+.field select:focus {
+  border-color: var(--color-ink);
+  outline: 2px solid var(--color-brass);
+  outline-offset: 0;
+}
+
+.field select:disabled {
+  opacity: 0.6;
+}
+
+.field [aria-invalid] {
+  border-color: var(--color-red);
+}
+
+.field__error {
+  min-height: 0;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-red-dark);
+}
+
+.field__error:empty,
+.field__hint:empty {
+  display: none;
+}
+
+.field__hint {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.form-note {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.confirmation {
+  display: grid;
+  gap: var(--space-3);
+  justify-items: start;
+}
+
+.confirmation:focus {
+  outline: none;
+}
+
+.confirmation__icon {
+  width: 48px;
+  height: 48px;
+}
+
+.confirmation__icon circle {
+  fill: var(--color-success);
+}
+
+.confirmation__icon path {
+  fill: none;
+  stroke: var(--color-white);
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.confirmation__title {
+  font-size: var(--text-xl);
+}
+
+.confirmation__summary {
+  display: grid;
+  gap: var(--space-2);
+  width: 100%;
+}
+
+.confirmation__summary div {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px dashed var(--color-border);
+}
+
+.confirmation__summary dt {
+  color: var(--color-text-muted);
+}
+
+.confirmation__summary dd {
+  font-weight: 600;
+  text-align: right;
+}
+
+.confirmation__demo {
+  padding: var(--space-3);
+  font-size: var(--text-sm);
+  background: var(--color-cream);
+  border-left: 4px solid var(--color-red);
+  border-radius: var(--radius-sm);
+}
+
+/* ---------- Footer ---------- */
+
+.footer {
+  padding-block: var(--space-6);
+  background: var(--color-ink);
+  color: var(--color-text-on-dark-muted);
+  font-size: var(--text-sm);
+  border-top: 3px double var(--color-brass);
+}
+
+.footer__inner {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.footer__logo {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-cream);
+}
+
+.footer a {
+  color: var(--color-cream);
+  font-weight: 600;
+}
+
+/* ---------- Tablet and up ---------- */
+
+@media (min-width: 640px) {
+  .service-list {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: var(--space-5);
+  }
+
+  .barber-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .booking-form {
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--space-4);
+  }
+
+  .field--full {
+    grid-column: 1 / -1;
+  }
+
+  .nav {
+    gap: var(--space-5);
+  }
+}
+
+/* ---------- Desktop ---------- */
+
+@media (min-width: 960px) {
+  .hero {
+    padding-block: var(--space-8);
+  }
+
+  .hero__inner {
+    grid-template-columns: 1.15fr 1fr;
+    align-items: center;
+  }
+
+  .service-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .booking__inner {
+    grid-template-columns: 1fr 1.25fr;
+    align-items: start;
+  }
+}
+
+/* ---------- Reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

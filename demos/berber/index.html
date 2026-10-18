@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ustura · Beşiktaş'ta klasik berber (örnek çalışma)</title>
+    <meta
+      name="description"
+      content="Ustura, Behlül Akdağ'ın hazırladığı hayali bir berber için örnek web sitesidir: hizmetler, ustalar ve online randevu formu."
+    />
+    <!-- Fictional business: kept out of search results so it is never confused with a real barber -->
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#16130f" />
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
+
+    <link rel="preload" href="../../assets/fonts/oswald-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- Demo notice: required on every demo site -->
+    <div class="demo-banner" role="note">
+      <p>
+        <strong>Örnek çalışma:</strong> Ustura gerçek bir işletme değildir. Bu site
+        <a href="../../">Behlül Akdağ</a>'ın portfolyosu için hazırlandı.
+      </p>
+    </div>
+
+    <header class="header">
+      <div class="container header__inner">
+        <a class="logo" href="#top" aria-label="Ustura, sayfanın başına dön">
+          <svg class="logo__pole" viewBox="0 0 16 40" aria-hidden="true">
+            <rect class="logo__cap" x="2" y="0" width="12" height="5" rx="2" />
+            <rect class="logo__glass" x="4" y="5" width="8" height="30" />
+            <path class="logo__stripe" d="M4 9l8-6M4 17l8-6M4 25l8-6M4 33l8-6" />
+            <rect class="logo__cap" x="2" y="35" width="12" height="5" rx="2" />
+          </svg>
+          <span>Ustura</span>
+        </a>
+        <nav aria-label="Ana menü">
+          <ul class="nav">
+            <li><a href="#services">Hizmetler</a></li>
+            <li><a href="#barbers">Ustalar</a></li>
+            <li><a class="nav__cta" href="#booking">Randevu</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <!-- HERO -->
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="container hero__inner">
+          <div class="hero__text">
+            <p class="eyebrow">Beşiktaş · 1987'den beri</p>
+            <h1 class="hero__title" id="hero-title">
+              Eski usul tıraş,<br />
+              <span class="hero__title-accent">yeni nesil özen.</span>
+            </h1>
+            <p class="hero__lead">
+              Sıcak havlu, köpük fırçası ve ustura. Üç kuşaktır aynı köşede, aynı titizlikle. Randevunu iki dakikada al,
+              sıra bekleme.
+            </p>
+            <div class="hero__actions">
+              <a class="button button--primary" href="#booking">Randevu al</a>
+              <a class="button button--ghost" href="#services">Fiyatlar</a>
+            </div>
+          </div>
+
+          <div class="hero__art">
+            <svg class="illustration" viewBox="0 0 420 420" role="img" aria-labelledby="hero-art-title">
+              <title id="hero-art-title">Dönen kırmızı beyaz berber direği, açık bir ustura ve "Ustura Beşiktaş 1987" yazılı yuvarlak mühür</title>
+              <defs>
+                <clipPath id="pole-glass">
+                  <rect x="150" y="70" width="64" height="250" rx="8" />
+                </clipPath>
+                <path id="seal-circle" d="M310 112a70 70 0 1 1-0.1 0" />
+              </defs>
+
+              <!-- Offset panel behind the pole breaks the silhouette -->
+              <rect class="ill-panel-outline" x="96" y="44" width="200" height="330" rx="16" />
+              <rect class="ill-panel" x="80" y="30" width="200" height="330" rx="16" />
+
+              <!-- Barber pole -->
+              <rect class="ill-pole-cap" x="140" y="46" width="84" height="26" rx="10" />
+              <circle class="ill-pole-knob" cx="182" cy="38" r="10" />
+              <rect class="ill-pole-glass" x="150" y="70" width="64" height="250" rx="8" />
+              <g clip-path="url(#pole-glass)">
+                <g class="ill-pole-stripes">
+                  <path d="M120 120l120-60v34L120 154zM120 190l120-60v34L120 224zM120 260l120-60v34L120 294zM120 330l120-60v34L120 364zM120 400l120-60v34L120 434z" class="ill-stripe-red" />
+                  <path d="M120 155l120-60v18L120 173zM120 225l120-60v18L120 243zM120 295l120-60v18L120 313zM120 365l120-60v18L120 383z" class="ill-stripe-blue" />
+                </g>
+              </g>
+              <rect class="ill-pole-shine" x="160" y="80" width="8" height="230" rx="4" />
+              <rect class="ill-pole-cap" x="140" y="318" width="84" height="26" rx="10" />
+
+              <!-- Straight razor resting across the bottom -->
+              <g class="ill-razor" transform="translate(40 352) rotate(-12)">
+                <path class="ill-razor-handle" d="M0 0h150a14 14 0 0 1 0 28H0a14 14 0 0 1 0-28z" />
+                <circle class="ill-razor-pin" cx="146" cy="14" r="5" />
+                <path class="ill-razor-blade" d="M146 4h120c10 0 16 8 12 18l-6 14H160z" />
+              </g>
+
+              <!-- Round seal with text on a circle -->
+              <g class="ill-seal">
+                <circle class="ill-seal-bg" cx="310" cy="182" r="86" />
+                <circle class="ill-seal-ring" cx="310" cy="182" r="58" />
+                <text class="ill-seal-text"><textPath href="#seal-circle">USTURA · BEŞİKTAŞ · USTURA · BEŞİKTAŞ ·</textPath></text>
+                <text class="ill-seal-year" x="310" y="196" text-anchor="middle">1987</text>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+      <section class="section services" id="services" aria-labelledby="services-title">
+        <div class="container">
+          <header class="section-head">
+            <p class="eyebrow eyebrow--dark">Hizmetler</p>
+            <h2 class="section-title" id="services-title">Fiyat listesi</h2>
+          </header>
+
+          <ul class="service-list">
+            <li class="service">
+              <div class="service__head">
+                <h3 class="service__name">Saç kesimi</h3>
+                <span class="service__price">450 ₺</span>
+              </div>
+              <p class="service__desc">Yıkama, kesim ve şekillendirme. Makas ya da makine, nasıl istersen.</p>
+              <p class="service__time">30 dk</p>
+            </li>
+            <li class="service service--featured">
+              <span class="service__ribbon">En çok tercih edilen</span>
+              <div class="service__head">
+                <h3 class="service__name">Saç + sakal</h3>
+                <span class="service__price">650 ₺</span>
+              </div>
+              <p class="service__desc">Kesim, sakal şekillendirme, sıcak havlu ve ustura ile kontür.</p>
+              <p class="service__time">60 dk</p>
+            </li>
+            <li class="service">
+              <div class="service__head">
+                <h3 class="service__name">Ustura ile ıslak tıraş</h3>
+                <span class="service__price">400 ₺</span>
+              </div>
+              <p class="service__desc">Ön yağ, sıcak havlu, köpük fırçası ve tek ağızlı ustura. Bitişte kolonya.</p>
+              <p class="service__time">30 dk</p>
+            </li>
+            <li class="service">
+              <div class="service__head">
+                <h3 class="service__name">Sakal şekillendirme</h3>
+                <span class="service__price">300 ₺</span>
+              </div>
+              <p class="service__desc">Makineyle düzeltme ve ustura ile net hatlar.</p>
+              <p class="service__time">30 dk</p>
+            </li>
+            <li class="service">
+              <div class="service__head">
+                <h3 class="service__name">Çocuk kesimi</h3>
+                <span class="service__price">300 ₺</span>
+              </div>
+              <p class="service__desc">12 yaş altı. Sabırlı usta, bol şaka.</p>
+              <p class="service__time">30 dk</p>
+            </li>
+            <li class="service">
+              <div class="service__head">
+                <h3 class="service__name">Cilt bakımı</h3>
+                <span class="service__price">350 ₺</span>
+              </div>
+              <p class="service__desc">Buhar, peeling ve maske. Tıraştan sonra eklenebilir.</p>
+              <p class="service__time">30 dk</p>
+            </li>
+          </ul>
+          <p class="services__note">Fiyatlar örnektir.</p>
+        </div>
+      </section>
+
+      <!-- BARBERS -->
+      <section class="section barbers" id="barbers" aria-labelledby="barbers-title">
+        <div class="container">
+          <header class="section-head">
+            <p class="eyebrow">Ustalar</p>
+            <h2 class="section-title" id="barbers-title">Koltukta kim var?</h2>
+          </header>
+
+          <ul class="barber-list">
+            <li class="barber">
+              <span class="barber__monogram" aria-hidden="true">R</span>
+              <h3 class="barber__name">Rıza Usta</h3>
+              <p class="barber__role">Kurucu · 38 yıl</p>
+              <p class="barber__desc">Ustura ile ıslak tıraşın ustası. Dükkânı babasından devraldı.</p>
+            </li>
+            <li class="barber">
+              <span class="barber__monogram" aria-hidden="true">K</span>
+              <h3 class="barber__name">Kerem</h3>
+              <p class="barber__role">Kesim · 9 yıl</p>
+              <p class="barber__desc">Klasik kesimler ve yumuşak geçişler. Makas işinde titiz.</p>
+            </li>
+            <li class="barber">
+              <span class="barber__monogram" aria-hidden="true">S</span>
+              <h3 class="barber__name">Selim</h3>
+              <p class="barber__role">Sakal · 6 yıl</p>
+              <p class="barber__desc">Sakal tasarımı ve cilt bakımı. Uzun sakallar ona emanet.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- BOOKING -->
+      <section class="section booking" id="booking" aria-labelledby="booking-title">
+        <div class="container booking__inner">
+          <div class="booking__intro">
+            <p class="eyebrow eyebrow--dark">Randevu</p>
+            <h2 class="section-title" id="booking-title">Koltuğunu ayırt</h2>
+            <p>
+              Tarih ve saat seç, gerisini biz halledelim. Randevuna 10 dakikadan fazla gecikirsen sıradaki müşteriye
+              geçmek zorunda kalabiliriz.
+            </p>
+            <dl class="hours">
+              <div class="hours__row"><dt>Salı – Cuma</dt><dd>09:00 – 20:00</dd></div>
+              <div class="hours__row"><dt>Cumartesi</dt><dd>09:00 – 21:00</dd></div>
+              <div class="hours__row"><dt>Pazar</dt><dd>10:00 – 18:00</dd></div>
+              <div class="hours__row hours__row--closed"><dt>Pazartesi</dt><dd>Kapalı</dd></div>
+            </dl>
+            <address class="booking__address">
+              Örnek Caddesi No: 7, Beşiktaş / İstanbul<br />
+              0 (212) 000 00 00 · <span class="fineprint">adres ve telefon temsilidir</span>
+            </address>
+          </div>
+
+          <div class="booking__card">
+            <noscript>
+              <p class="form-note">Online randevu için JavaScript gerekli. Dilersen telefonla arayabilirsin.</p>
+            </noscript>
+
+            <form class="booking-form" data-booking-form novalidate>
+              <div class="field">
+                <label for="booking-name">Adın</label>
+                <input id="booking-name" name="name" type="text" autocomplete="name" aria-describedby="booking-name-error" required />
+                <p class="field__error" id="booking-name-error" data-error-for="name"></p>
+              </div>
+
+              <div class="field">
+                <label for="booking-phone">Cep telefonu</label>
+                <input
+                  id="booking-phone"
+                  name="phone"
+                  type="tel"
+                  inputmode="tel"
+                  autocomplete="tel"
+                  placeholder="0532 123 45 67"
+                  aria-describedby="booking-phone-error"
+                  required
+                />
+                <p class="field__error" id="booking-phone-error" data-error-for="phone"></p>
+              </div>
+
+              <div class="field">
+                <label for="booking-service">Hizmet</label>
+                <select id="booking-service" name="service" aria-describedby="booking-service-error" required>
+                  <option value="">Hizmet seçin</option>
+                  <option value="haircut" data-duration="30">Saç kesimi · 450 ₺</option>
+                  <option value="haircut-beard" data-duration="60">Saç + sakal · 650 ₺</option>
+                  <option value="wet-shave" data-duration="30">Ustura ile ıslak tıraş · 400 ₺</option>
+                  <option value="beard" data-duration="30">Sakal şekillendirme · 300 ₺</option>
+                  <option value="kids" data-duration="30">Çocuk kesimi · 300 ₺</option>
+                  <option value="skin" data-duration="30">Cilt bakımı · 350 ₺</option>
+                </select>
+                <p class="field__error" id="booking-service-error" data-error-for="service"></p>
+              </div>
+
+              <div class="field">
+                <label for="booking-barber">Usta</label>
+                <select id="booking-barber" name="barber">
+                  <option value="any">Fark etmez</option>
+                  <option value="riza">Rıza Usta</option>
+                  <option value="kerem">Kerem</option>
+                  <option value="selim">Selim</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="booking-date">Tarih</label>
+                <input id="booking-date" name="date" type="date" aria-describedby="booking-date-error" required />
+                <p class="field__error" id="booking-date-error" data-error-for="date"></p>
+              </div>
+
+              <div class="field">
+                <label for="booking-time">Saat</label>
+                <select id="booking-time" name="time" aria-describedby="booking-time-hint booking-time-error" required disabled>
+                  <option value="">Önce tarih seçin</option>
+                </select>
+                <p class="field__hint" id="booking-time-hint" data-time-hint aria-live="polite"></p>
+                <p class="field__error" id="booking-time-error" data-error-for="time"></p>
+              </div>
+
+              <button class="button button--primary field--full" type="submit">Randevuyu onayla</button>
+              <p class="form-note field--full">Bu bir demo: form hiçbir yere gönderilmez.</p>
+            </form>
+
+            <div class="confirmation" data-booking-confirmation role="status" tabindex="-1" hidden>
+              <svg class="confirmation__icon" viewBox="0 0 48 48" aria-hidden="true">
+                <circle cx="24" cy="24" r="22" />
+                <path d="M14 25l7 7 13-15" />
+              </svg>
+              <h3 class="confirmation__title">Randevun hazır, <span data-summary-name></span>!</h3>
+              <dl class="confirmation__summary">
+                <div><dt>Hizmet</dt><dd data-summary-service></dd></div>
+                <div><dt>Usta</dt><dd data-summary-barber></dd></div>
+                <div><dt>Zaman</dt><dd data-summary-when></dd></div>
+                <div><dt>Telefon</dt><dd data-summary-phone></dd></div>
+              </dl>
+              <p class="confirmation__demo">
+                <strong>Demo notu:</strong> Bu örnek bir sitedir; randevu gerçekte oluşturulmadı ve bilgilerin hiçbir
+                yere gönderilmedi.
+              </p>
+              <button class="button button--ghost-dark" type="button" data-booking-reset>Yeni randevu</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <p class="footer__logo">Ustura</p>
+        <p>
+          Bu bir örnek çalışmadır; marka, ustalar ve iletişim bilgileri hayalidir.<br />
+          Tasarım ve kod: <a href="../../">Behlül Akdağ</a>
+        </p>
+      </div>
+    </footer>
+
+    <script type="module" src="js/booking.js"></script>
+  </body>
+</html>
