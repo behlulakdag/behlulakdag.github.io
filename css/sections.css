@@ -175,6 +175,63 @@
   color: var(--color-text);
 }
 
+.site-nav {
+  margin-left: auto;
+}
+
+.theme-toggle {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  margin-left: var(--space-3);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  /* Offset accent corner keeps the button from reading as a plain square */
+  box-shadow: 3px 3px 0 var(--color-accent-soft);
+  cursor: pointer;
+  transition:
+    border-color var(--duration-fast) var(--ease-out),
+    transform var(--duration-fast) var(--ease-out);
+}
+
+.theme-toggle:hover {
+  border-color: var(--color-accent);
+  transform: translate(-1px, -1px);
+}
+
+.theme-toggle__icon {
+  grid-area: 1 / 1;
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: var(--color-accent);
+  stroke-width: 2;
+  stroke-linecap: round;
+  transition:
+    opacity var(--duration-base) var(--ease-out),
+    transform var(--duration-base) var(--ease-out);
+}
+
+/* Dark theme shows the sun (what you switch to), light theme shows the moon */
+.theme-toggle__icon--moon,
+[data-theme="light"] .theme-toggle__icon--sun {
+  opacity: 0;
+  transform: rotate(-90deg) scale(0.6);
+}
+
+[data-theme="light"] .theme-toggle__icon--moon {
+  opacity: 1;
+  transform: none;
+}
+
+.theme-toggle__icon--moon {
+  fill: var(--color-accent);
+  stroke: none;
+}
+
 /* ---------- Hero ---------- */
 
 .hero {

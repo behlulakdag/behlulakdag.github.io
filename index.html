@@ -24,6 +24,19 @@
 
     <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
 
+    <!-- Runs before CSS paints so a light-theme visitor never sees a dark flash; js/theme.js takes over after load -->
+    <script>
+      (function () {
+        var theme;
+        try { theme = localStorage.getItem("theme"); } catch (e) {}
+        if (theme !== "light" && theme !== "dark") {
+          theme = matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+        }
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.classList.add("js");
+      })();
+    </script>
+
     <!-- Fonts are self-hosted: no extra round trip to Google before first paint -->
     <link rel="preload" href="assets/fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
@@ -49,6 +62,16 @@
             <li><a href="#contact">İletişim</a></li>
           </ul>
         </nav>
+
+        <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="Aydınlık temaya geç">
+          <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4.5" />
+            <path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8" />
+          </svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z" />
+          </svg>
+        </button>
       </div>
     </header>
 
@@ -414,5 +437,7 @@ java  kotlin  luau  html  css  javascript
         </ul>
       </div>
     </footer>
+
+    <script type="module" src="js/main.js"></script>
   </body>
 </html>
