@@ -198,7 +198,7 @@ portfolio/
 **Faz 3 · Demo siteler ve İngilizce (Hafta 5–8)**
 
 - [x] Demo site 1: Kafe ("Demlik", `demos/kafe/`)
-- [ ] Demo site 2: Berber / kuaför
+- [x] Demo site 2: Berber / kuaför ("Ustura", `demos/berber/`, randevu formlu)
 - [ ] Demo site 3: Spor salonu
 - [ ] TR / EN dil düğmesi
 - [ ] Canlı GitHub bölümü

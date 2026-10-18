@@ -68,8 +68,19 @@
 - Tests: 22 passing (`npm test`).
 - Lighthouse (live): home 100 ×4; cafe 100 / 100 / 100 / SEO 60 — the 60 is only the intentional `noindex`.
 
+## 2026-10-18 — Session 1 (cont.): Phase 3 — barber demo
+
+**Done**
+- `demos/berber/`: "Ustura", fictional classic barber in Beşiktaş (Behlül picked the brand). Oswald signage font added.
+  - SVG hero: spinning barber pole (stripes animate, off with reduced motion), straight razor, round "1987" seal with text on a circle.
+  - Services price list, three barbers with monogram badges (no faces), hours, representative address.
+  - Appointment form (`js/booking.js`): time slots from opening hours and service length, Monday closed, today's past slots hidden (30 min lead), max 30 days ahead, Turkish mobile number validation, inline errors with `aria-invalid`, focus to first error. Submit shows a summary + explicit "demo, nothing was sent" note; nothing leaves the browser.
+  - Header keeps only the "Randevu" button under 420px (320px overflowed before the fix).
+- Portfolio card #07. Tests: 34 passing.
+- Lighthouse (live): home 100 ×4; barber 100 / 100 / 100 / SEO 60 (intentional `noindex`).
+
 **Known gap**
-- Desktop project grid: card #06 sits alone on the last row until the berber and spor salonu demos fill it.
+- Desktop project grid: last row has two demo cards and one empty slot until the spor salonu demo.
 
 **Next step**
-- Phase 3: demo 2 (berber / kuaför, with appointment form), then demo 3 (spor salonu), then TR/EN and live GitHub section.
+- Phase 3: demo 3 (spor salonu, membership packages), then TR/EN switch and live GitHub section.
