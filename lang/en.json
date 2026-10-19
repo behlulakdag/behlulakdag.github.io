@@ -37,6 +37,34 @@
       { "command": "ls skills/", "output": ["java  kotlin  luau  html  css  javascript"] },
       { "command": "status", "output": [{ "text": "● open to internships and freelance work", "accent": true }] }
     ],
+    "promptLabel": "Terminal command",
+    "promptPlaceholder": "type help and press Enter",
+    "cmd": {
+      "helpIntro": "Available commands:",
+      "helpSecret": "There's also one command that isn't on this list. 👀",
+      "desc": {
+        "help": "show this list",
+        "whoami": "who I am",
+        "projects": "list my projects",
+        "gym": "gym mode",
+        "contact": "contact details",
+        "theme": "dark / light theme",
+        "lang": "switch language (lang tr)",
+        "clear": "clear the screen"
+      },
+      "whoami": [
+        "Behlül Akdağ · computer engineering student",
+        "Java, Kotlin, Luau and the web. Powerlifting in my free time."
+      ],
+      "projectsHint": "Click a project's name to open it.",
+      "gym": ["Squat · Bench · Deadlift", "I track my training with LiftLog, an app I wrote myself:"],
+      "contact": "Scrolling to the contact form. Or reach me here:",
+      "theme": "Theme switched.",
+      "langUsage": "Usage: lang tr or lang en",
+      "matrix": ["Wake up, Neo...", "The portfolio has you."],
+      "sudo": ["You don't have permission on this machine. 😄", "But you can ask for a quote, taking you to the form."],
+      "notFound": "command not found: {name} · try 'help'"
+    },
     "chipsLabel": "Highlights",
     "chipProjects": "5 projects live",
     "chipGames": "3 Roblox games"
