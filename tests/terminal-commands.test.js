@@ -7,6 +7,7 @@ import {
   completeCommand,
   VISIBLE_COMMANDS,
   HIDDEN_COMMANDS,
+  recordLines,
 } from "../js/terminal-commands.js";
 import { lookup, format } from "../js/i18n.js";
 
@@ -62,6 +63,25 @@ test("actions: gym spins the model, contact and sudo scroll, theme toggles, clea
   assert.deepEqual(run("theme").action, { type: "toggle-theme" });
   assert.deepEqual(run("clear"), { lines: [], action: { type: "clear" } });
   assert.deepEqual(run("matrix").action, { type: "matrix" });
+});
+
+test("gym prints the three lifts and their total, aligned", () => {
+  const lines = run("gym").lines.map(text);
+  assert.ok(lines.includes("  Squat       140 kg"), lines.join("\n"));
+  assert.ok(lines.includes("  Bench       110 kg"));
+  assert.ok(lines.includes("  Deadlift    190 kg"));
+  assert.ok(lines.includes("  Toplam      440 kg"));
+  assert.ok(run("gym", "en").lines.map(text).includes("  Total       440 kg"));
+});
+
+test("recordLines formats decimals per language and sums them", () => {
+  const records = [["Squat", 142.5], ["Bench", 100]];
+  assert.deepEqual(recordLines(records, "Toplam", "tr"), [
+    "  Squat     142,5 kg",
+    "  Bench       100 kg",
+    "  Toplam    242,5 kg",
+  ]);
+  assert.equal(recordLines(records, "Total", "en")[2], "  Total     242.5 kg");
 });
 
 test("lang toggles, accepts tr/en, rejects anything else", () => {

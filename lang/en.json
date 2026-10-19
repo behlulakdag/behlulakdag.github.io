@@ -57,7 +57,9 @@
         "Java, Kotlin, Luau and the web. Powerlifting in my free time."
       ],
       "projectsHint": "Click a project's name to open it.",
-      "gym": ["Squat · Bench · Deadlift", "I track my training with LiftLog, an app I wrote myself:"],
+      "gymRecords": "My personal records:",
+      "gymTotal": "Total",
+      "gym": ["I track my training with LiftLog, an app I wrote myself:"],
       "contact": "Scrolling to the contact form. Or reach me here:",
       "theme": "Theme switched.",
       "langUsage": "Usage: lang tr or lang en",

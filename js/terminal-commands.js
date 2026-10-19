@@ -9,6 +9,20 @@ export const HIDDEN_COMMANDS = ["matrix", "sudo"];
 
 const ALL_COMMANDS = [...VISIBLE_COMMANDS, ...HIDDEN_COMMANDS];
 
+// Behlül's competition-lift personal records in kg. Update here when a new PR lands; the total is computed.
+export const PERSONAL_RECORDS = [
+  ["Squat", 140],
+  ["Bench", 110],
+  ["Deadlift", 190],
+];
+
+export function recordLines(records, totalLabel, lang) {
+  const number = new Intl.NumberFormat(lang === "en" ? "en-US" : "tr-TR", { maximumFractionDigits: 1 });
+  const total = records.reduce((sum, [, kg]) => sum + kg, 0);
+  const row = (label, kg) => `  ${label.padEnd(10)}${number.format(kg).padStart(5)} kg`;
+  return [...records.map(([lift, kg]) => row(lift, kg)), row(totalLabel, total)];
+}
+
 export const BARBELL_ART = [
   "  ▐█▌▐▌                    ▐▌▐█▌",
   "▐▌▐█▌▐▌════════════════════▐▌▐█▌▐▌",
@@ -81,6 +95,11 @@ export function runCommand(raw, { t, projects = [], lang = "tr" }) {
       return {
         lines: [
           ...BARBELL_ART.map((text) => ({ text, accent: true })),
+          t("terminal.cmd.gymRecords"),
+          ...recordLines(PERSONAL_RECORDS, t("terminal.cmd.gymTotal"), lang).map((text, index, all) => ({
+            text,
+            accent: index === all.length - 1, // the total stands out
+          })),
           ...asLines(t("terminal.cmd.gym")),
           { text: "github.com/behlulakdag/liftlog", href: "https://github.com/behlulakdag/liftlog" },
         ],

@@ -57,7 +57,9 @@
         "Java, Kotlin, Luau ve web. Boş zamanında powerlifting."
       ],
       "projectsHint": "Bir projeye gitmek için adına tıkla.",
-      "gym": ["Squat · Bench · Deadlift", "Antrenmanlarımı kendi yazdığım LiftLog ile takip ediyorum:"],
+      "gymRecords": "Kişisel rekorlarım:",
+      "gymTotal": "Toplam",
+      "gym": ["Antrenmanlarımı kendi yazdığım LiftLog ile takip ediyorum:"],
       "contact": "İletişim formuna kaydırıyorum. Ya da buradan ulaş:",
       "theme": "Tema değiştirildi.",
       "langUsage": "Kullanım: lang tr veya lang en",
