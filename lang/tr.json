@@ -11,7 +11,8 @@
     "navLabel": "Ana menü",
     "projects": "Projeler",
     "services": "Hizmetler",
-    "contact": "İletişim"
+    "contact": "İletişim",
+    "backToTop": "Başa dön"
   },
   "theme": {
     "toLight": "Aydınlık temaya geç",

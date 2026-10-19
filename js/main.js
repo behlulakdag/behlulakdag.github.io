@@ -7,6 +7,7 @@ import { initFilter } from "./filter.js";
 import { initCardVideos } from "./card-video.js";
 import { initGitHub } from "./github.js";
 import { initHeroModel } from "./hero-model.js";
+import { initNavigation } from "./navigation.js";
 
 // Language first, so every feature below starts with the right labels
 await initI18n();
@@ -26,3 +27,4 @@ initFilter(t);
 initCardVideos();
 initGitHub(t, getLanguage);
 initHeroModel();
+initNavigation(t);

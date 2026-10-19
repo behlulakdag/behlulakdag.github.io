@@ -11,7 +11,8 @@
     "navLabel": "Main menu",
     "projects": "Projects",
     "services": "Services",
-    "contact": "Contact"
+    "contact": "Contact",
+    "backToTop": "Back to top"
   },
   "theme": {
     "toLight": "Switch to light theme",

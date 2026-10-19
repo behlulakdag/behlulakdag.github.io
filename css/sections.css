@@ -227,6 +227,79 @@
   color: var(--color-text);
 }
 
+/* The section you're reading (js/navigation.js): accent text with a short bar underneath */
+.site-nav__list a[aria-current="true"] {
+  position: relative;
+  color: var(--color-accent);
+}
+
+.site-nav__list a[aria-current="true"]::after {
+  content: "";
+  position: absolute;
+  left: var(--space-1);
+  right: var(--space-1);
+  bottom: 2px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+}
+
+/* ---------- Back to top (js/navigation.js) ---------- */
+
+.back-to-top {
+  position: fixed;
+  z-index: 40;
+  right: var(--space-3);
+  bottom: var(--space-3);
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  color: var(--color-accent);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  box-shadow: 3px 3px 0 var(--color-accent-soft);
+  cursor: pointer;
+  animation: back-to-top-in var(--duration-base) var(--ease-out);
+  transition:
+    border-color var(--duration-fast) var(--ease-out),
+    transform var(--duration-fast) var(--ease-out);
+}
+
+.back-to-top[hidden] {
+  display: none;
+}
+
+.back-to-top:hover {
+  border-color: var(--color-accent);
+  transform: translate(-1px, -1px);
+}
+
+.back-to-top svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@keyframes back-to-top-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+@media (min-width: 960px) {
+  .back-to-top {
+    right: var(--space-5);
+    bottom: var(--space-5);
+  }
+}
+
 .site-nav {
   margin-left: auto;
 }
