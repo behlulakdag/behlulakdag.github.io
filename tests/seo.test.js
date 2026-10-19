@@ -48,6 +48,15 @@ test("manifest is valid and every icon it lists exists at the stated size", asyn
   }
 });
 
+test("404 page stays out of search and works from any URL depth", async () => {
+  const page = await read("404.html");
+  assert.match(page, /<meta name="robots" content="noindex" \/>/);
+  // GitHub Pages serves it at e.g. /a/b/c, so relative links would break: every href/src must start at the root
+  for (const [, url] of page.matchAll(/(?:href|src)="([^"]+)"/g)) {
+    assert.match(url, /^(\/|https?:)/, `relative link in 404.html: ${url}`);
+  }
+});
+
 test("every demo site stays out of search results", async () => {
   for (const demo of await readdir(new URL("../demos/", import.meta.url))) {
     const page = await read(`demos/${demo}/index.html`);

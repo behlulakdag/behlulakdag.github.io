@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>404 · Sayfa bulunamadı · Behlül Akdağ</title>
+    <meta name="description" content="Aradığın sayfa bulunamadı. Page not found." />
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#0e1116" />
+    <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
+
+    <!-- GitHub Pages serves this file for any missing URL, at any depth, so every path here starts at the root -->
+    <script>
+      (function () {
+        var theme;
+        try { theme = localStorage.getItem("theme"); } catch (e) {}
+        if (theme !== "light" && theme !== "dark") {
+          theme = matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+        }
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link rel="stylesheet" href="/css/variables.css" />
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="/css/sections.css" />
+  </head>
+
+  <body class="not-found">
+    <main class="container not-found__inner">
+      <p class="not-found__code" aria-hidden="true">404</p>
+
+      <div class="terminal not-found__terminal">
+        <div class="terminal__back" aria-hidden="true"></div>
+        <div class="terminal__window">
+          <div class="terminal__bar" aria-hidden="true">
+            <span class="terminal__dot"></span>
+            <span class="terminal__dot"></span>
+            <span class="terminal__dot"></span>
+            <span class="terminal__title">behlul@portfolio: ~</span>
+          </div>
+          <pre class="terminal__body"><code><span class="terminal__prompt">&gt;</span> cd <span data-missing-path>/bu-sayfa</span>
+<span class="terminal__error">bash: cd: böyle bir sayfa yok</span>
+<span class="terminal__muted">bash: cd: no such page</span>
+
+<span class="terminal__prompt">&gt;</span> ls /
+<a href="/#projects">projeler/</a>  <a href="/#services">hizmetler/</a>  <a href="/#contact">iletişim/</a></code></pre>
+        </div>
+      </div>
+
+      <h1 class="not-found__title">Bu sayfa yok, ama gerisi duruyor.</h1>
+      <p class="not-found__lead" lang="en">This page doesn't exist, but everything else does.</p>
+
+      <div class="not-found__actions">
+        <a class="button button--primary" href="/">Ana sayfaya dön</a>
+        <a class="button button--ghost" href="/?lang=en" lang="en">Go to the homepage</a>
+      </div>
+    </main>
+
+    <script>
+      // Show the address that was asked for (as text, never as HTML)
+      document.querySelector("[data-missing-path]").textContent = location.pathname;
+    </script>
+  </body>
+</html>
