@@ -135,6 +135,21 @@
 - Tests: 77 passing.
 - Lighthouse (live): TR desktop 100 ×4 (TBT 0), TR mobile 99/100/100/100, EN mobile 98/100/100/100; no 3D requests during page load.
 
-**Next step**
-- Phase 4: terminal secret commands (`help`, `projects`, `gym`, easter egg).
-- Later (Behlül): custom domain purchase, LiftLog APK link when it ships.
+## 2026-10-19 — Session 1 (cont.): Phase 4 — interactive terminal
+
+**Done**
+- `js/terminal-commands.js` (pure, tested) + prompt wiring in `js/terminal.js`.
+  - Prompt opens after the typing intro, on click-to-skip, or immediately with reduced motion. Not auto-focused (no surprise keyboard on phones); clicking the terminal focuses it.
+  - Commands: `help`, `whoami`, `projects` (read from the cards on the page, clickable), `gym` (ASCII barbell + LiftLog link, spins the 3D model), `contact` (links + scroll to form), `theme`, `lang [tr|en]`, `clear`.
+  - Hidden: `matrix` (green character rain over the window for ~4s, skipped with reduced motion) and `sudo …` (joke + scroll to the quote form). `help` hints that a secret exists.
+  - ↑/↓ history, Tab completion (never reveals hidden commands; Tab still leaves the field when there's nothing to complete). Output lives in an `aria-live` region for screen readers; the terminal body scrolls internally (max 340px).
+  - Command names are English in both languages; output text comes from `terminal.cmd.*` in `lang/*.json`.
+- Small-phone fix: highlight chips no longer wrap over the prompt.
+- Tests: 86 passing (every command prints non-empty, translated text in TR and EN; help never lists hidden commands).
+- Lighthouse (live): TR desktop 100 ×4, TR mobile 100 ×4, EN mobile 98/100/100/100.
+
+**For Behlül**
+- `gym` prints no numbers on purpose. If you want your real squat/bench/deadlift PRs in it, tell me the numbers.
+
+**Phase 4 status**
+- Done: 3D model, terminal commands. Left for you: buy a domain (`behlulakdag.dev` / `behlul.dev`), then I'll connect it; LiftLog APK link when it ships.

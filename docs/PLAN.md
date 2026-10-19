@@ -207,7 +207,7 @@ portfolio/
 **Faz 4 · Şov kısmı (vizelerden sonra)**
 
 - [x] Blender'da küçük model, Three.js ile ana sayfada (yüklü halter, `tools/blender/barbell.py` ile üretiliyor)
-- [ ] Terminal gizli komutları ve sürpriz
+- [x] Terminal gizli komutları ve sürpriz (help, whoami, projects, gym, contact, theme, lang, clear + gizli `matrix` ve `sudo`)
 - [ ] Kendi alan adın (`.dev` gibi)
 - [ ] LiftLog bitince kartını güncelle, APK linkini ekle
 
