@@ -54,3 +54,14 @@ test("every demo site stays out of search results", async () => {
     assert.match(page, /<meta name="robots" content="noindex" \/>/, `${demo} is indexable`);
   }
 });
+
+test("every demo has a link-preview image that exists and is 1200x630", async () => {
+  for (const demo of await readdir(new URL("../demos/", import.meta.url))) {
+    const page = await read(`demos/${demo}/index.html`);
+    const url = page.match(/property="og:image" content="([^"]+)"/)?.[1];
+    assert.ok(url, `${demo} has no og:image`);
+    const localPath = url.replace("https://behlulakdag.github.io/", "");
+    const png = await readFile(new URL(`../${localPath}`, import.meta.url));
+    assert.equal(`${png.readUInt32BE(16)}x${png.readUInt32BE(20)}`, "1200x630", localPath);
+  }
+});
