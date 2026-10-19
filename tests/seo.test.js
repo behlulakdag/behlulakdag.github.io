@@ -36,6 +36,18 @@ test("JSON-LD is valid and its profile links match the contact links on the page
   }
 });
 
+test("manifest is valid and every icon it lists exists at the stated size", async () => {
+  assert.match(html, /<link rel="manifest" href="manifest\.webmanifest" \/>/);
+  const manifest = JSON.parse(await read("manifest.webmanifest"));
+  assert.equal(manifest.start_url, "/");
+  for (const icon of manifest.icons) {
+    const png = await readFile(new URL(`../${icon.src}`, import.meta.url));
+    // PNG header: width and height are big-endian 32-bit ints at bytes 16 and 20
+    const size = `${png.readUInt32BE(16)}x${png.readUInt32BE(20)}`;
+    assert.equal(size, icon.sizes, icon.src);
+  }
+});
+
 test("every demo site stays out of search results", async () => {
   for (const demo of await readdir(new URL("../demos/", import.meta.url))) {
     const page = await read(`demos/${demo}/index.html`);
