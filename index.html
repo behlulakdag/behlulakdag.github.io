@@ -10,6 +10,34 @@
     />
     <meta name="theme-color" content="#0e1116" />
     <link rel="canonical" href="https://behlulakdag.github.io/" />
+    <!-- Same page in two languages: tell search engines which link is which -->
+    <link rel="alternate" hreflang="tr" href="https://behlulakdag.github.io/" />
+    <link rel="alternate" hreflang="en" href="https://behlulakdag.github.io/?lang=en" />
+    <link rel="alternate" hreflang="x-default" href="https://behlulakdag.github.io/" />
+
+    <!-- Structured data: lets search engines show this page as Behlül's personal profile -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Behlül Akdağ",
+        "url": "https://behlulakdag.github.io/",
+        "image": "https://behlulakdag.github.io/assets/img/profile.webp",
+        "jobTitle": "Software Developer and Web Designer",
+        "affiliation": {
+          "@type": "CollegeOrUniversity",
+          "name": "İstanbul Aydın Üniversitesi"
+        },
+        "address": { "@type": "PostalAddress", "addressLocality": "İstanbul", "addressCountry": "TR" },
+        "knowsAbout": ["Java", "Kotlin", "Spring Boot", "JavaScript", "HTML", "CSS", "Luau", "Roblox", "Web design"],
+        "sameAs": [
+          "https://github.com/behlulakdag",
+          "https://www.linkedin.com/in/behlulakdag/",
+          "https://www.fiverr.com/behlul_akdag",
+          "https://www.upwork.com/freelancers/~01e754c0666160751d"
+        ]
+      }
+    </script>
 
     <!-- Link previews (WhatsApp, LinkedIn, X) -->
     <meta property="og:type" content="website" />
