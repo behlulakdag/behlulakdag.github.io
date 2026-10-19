@@ -152,5 +152,20 @@
 - `gym` now shows Behlül's PRs: squat 140, bench 110, deadlift 190, total 440 kg (TR "Toplam" / EN "Total").
 - To update a PR: change `PERSONAL_RECORDS` at the top of `js/terminal-commands.js`, then update the expected numbers in `tests/terminal-commands.test.js`. The total is computed. Tests: 88 passing.
 
+## 2026-10-19 — Session 1 (cont.): polish
+
+**Done**
+- Search & sharing: `robots.txt`, `sitemap.xml` (portfolio only, demos excluded), `hreflang` tr / en / x-default, Person JSON-LD (university, skills, profile links — a test keeps them equal to the contact links).
+- `manifest.webmanifest` + home-screen icons (`icon-192/512.png`, `apple-touch-icon.png`, full-bleed so Android masks look right).
+- Demo link previews: 1200×630 `og-image.png` per demo (shows the "örnek çalışma" banner) + og/twitter tags.
+- `js/navigation.js`: menu link of the section you're reading gets `aria-current` (green + underline); back-to-top button appears after ~1.2 screens, returns focus to the brand link. Scroll work throttled to one update per frame.
+- `404.html`: terminal-themed ("cd /missing-path: no such page"), TR + EN, root-relative links so it works at any depth, `noindex`. Verified live: missing URLs return HTTP 404 with this page.
+- Tests: 100 passing.
+- Lighthouse (live): TR desktop 100 ×4, TR mobile 100 ×4, EN mobile 99/100/100/100. 404 page (local): a11y 100, best practices 100, SEO 63 only because of the intentional `noindex`.
+
+**Still open (needs Behlül)**
+- Contact form: create a Formspree form and send me its ID — until then messages are lost.
+- is-a.dev: fork + `domains/behlul.json` done; pull request not opened yet (template, contact e-mail and the NON_COMMERCIAL checkbox are his to fill).
+
 **Phase 4 status**
 - Done: 3D model, terminal commands. Left for you: buy a domain (`behlulakdag.dev` / `behlul.dev`), then I'll connect it; LiftLog APK link when it ships.
