@@ -75,7 +75,20 @@ async function startViewer(container) {
   controls.minPolarAngle = Math.PI * 0.18;
   controls.maxPolarAngle = Math.PI * 0.48; // never look from under the platform
   controls.autoRotate = !prefersReducedMotion;
-  controls.autoRotateSpeed = 1.1;
+  const BASE_SPEED = 1.1;
+  controls.autoRotateSpeed = BASE_SPEED;
+
+  // The terminal's `gym` command spins the barbell fast for a moment
+  let spinTimer = null;
+  function spin() {
+    if (prefersReducedMotion) return;
+    controls.autoRotate = true;
+    controls.autoRotateSpeed = 18;
+    clearTimeout(spinTimer);
+    spinTimer = setTimeout(() => {
+      controls.autoRotateSpeed = BASE_SPEED;
+    }, 2400);
+  }
 
   const loader = new GLTFLoader();
   loader.setMeshoptDecoder(MeshoptDecoder);
@@ -117,7 +130,12 @@ async function startViewer(container) {
   });
 
   container.classList.add("is-ready");
+  document.addEventListener("hero-model:spin", spin);
+  // A spin asked for while the model was still loading plays now
+  if (spinRequested) spin();
 }
+
+let spinRequested = false;
 
 export function initHeroModel() {
   const container = document.querySelector("[data-hero-model]");
@@ -130,6 +148,8 @@ export function initHeroModel() {
     webgl: supportsWebGL(),
   });
   if (!enabled) return;
+
+  document.addEventListener("hero-model:spin", () => (spinRequested = true), { once: true });
 
   const start = () =>
     whenIdle(() =>
