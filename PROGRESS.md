@@ -148,8 +148,9 @@
 - Tests: 86 passing (every command prints non-empty, translated text in TR and EN; help never lists hidden commands).
 - Lighthouse (live): TR desktop 100 ×4, TR mobile 100 ×4, EN mobile 98/100/100/100.
 
-**For Behlül**
-- `gym` prints no numbers on purpose. If you want your real squat/bench/deadlift PRs in it, tell me the numbers.
+**Update 2026-10-19**
+- `gym` now shows Behlül's PRs: squat 140, bench 110, deadlift 190, total 440 kg (TR "Toplam" / EN "Total").
+- To update a PR: change `PERSONAL_RECORDS` at the top of `js/terminal-commands.js`, then update the expected numbers in `tests/terminal-commands.test.js`. The total is computed. Tests: 88 passing.
 
 **Phase 4 status**
 - Done: 3D model, terminal commands. Left for you: buy a domain (`behlulakdag.dev` / `behlul.dev`), then I'll connect it; LiftLog APK link when it ships.
